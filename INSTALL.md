@@ -6,7 +6,7 @@
 
 | 入口 | 安装位置 | 用途 |
 |---|---|---|
-| `install-copilot.cmd` | `%USERPROFILE%\.copilot\skills\cognitive-perspective-check` | 你截图中的 GitHub Copilot App |
+| `install-copilot.cmd` | `%USERPROFILE%\.copilot\skills\cognitive-perspective-check` | GitHub Copilot |
 | `install-shared.cmd` | `%USERPROFILE%\.agents\skills\cognitive-perspective-check` | 当前官方说明中的 Copilot / Codex 共用目录 |
 
 双击前应已完整解压 ZIP。入口只启动本地 `install.ps1` 并显示安装结果；无需下载依赖或输入 GitHub 凭证。第一次安装会显示目标路径。脚本一致时再次运行显示 `Already installed`；内容不同的旧版本会保留，提示显式更新。
@@ -68,7 +68,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target Copilo
 
 ## GitHub 发布后的在线安装
 
-这个包尚未绑定仓库，不能提供可运行的仓库安装地址。发布者选择真实的 `OWNER/REPOSITORY` 后，可按 GitHub CLI 官方说明使用 `gh skill preview` / `gh skill install`。该命令目前属于预览功能，要求的 CLI 版本见官方文档。下载 ZIP 和手动复制不依赖此工具。
+公开仓库：[EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)。下载 [源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)，完整解压后进入包含 `README.md` 和安装入口的文件夹，按本文的双击或手动复制步骤安装。版本安装包发布后可从 [Releases](https://github.com/EversiusJade/cognitive-perspective-check/releases) 下载。下载 ZIP 和手动复制不依赖 GitHub CLI；在线技能安装命令需另行在目标工具验证。
 
 ## 维护者检查
 

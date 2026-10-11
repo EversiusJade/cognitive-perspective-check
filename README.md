@@ -10,6 +10,8 @@ AI 先提炼你想解决的事，只补问会改变方向的少数信息，再�
 
 ## 安装与首次使用
 
+下载：[仓库源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)。完整解压后，打开包含 `README.md` 和安装入口的文件夹。版本安装包发布后，也可从 [Releases](https://github.com/EversiusJade/cognitive-perspective-check/releases) 下载。
+
 **Windows / GitHub Copilot：**下载完整安装包并解压，双击 `install-copilot.cmd`。脚本将 skill 复制到当前用户的 `.copilot/skills`，无需管理员权限、Python、Node 或额外账号。之后新建一轮聊天，输入：
 
 > 使用 cognitive-perspective-check。我们想给小店做一个 App 提高收入，但现在还没想清楚该怎么做。先帮我校准问题，简短一点。
@@ -64,6 +66,8 @@ LICENSE                    MIT
 ```
 
 ## 反馈
+
+通过 [GitHub Issues](https://github.com/EversiusJade/cognitive-perspective-check/issues) 提交反馈。
 
 反馈请附原始需求、相关上下文、客户端/模型、是否明确调用、实际回答和你希望改变的行为。特别欢迎报告误触发、反复确认、替你改目标、替代方案没有实际差别，以及明确选择后仍展开其他分支。不要提交敏感信息。
 

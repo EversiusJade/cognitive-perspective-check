@@ -12,7 +12,7 @@
 
 将完整包内的文件上传到仓库根目录，确保首页直接看到 README，且入口在 `skills/cognitive-perspective-check/SKILL.md`。不要把制作时的 `work/`、临时 Python 依赖或个人凭证上传。
 
-首次建议发布预览 Release，tag 使用 `v0.2.0-rc.1`，勾选 pre-release。附件放 Windows 安装 ZIP 和纯 skill ZIP。README 中的版本与技能 metadata 一致。仓库仍未由制作助手实际创建或发布。
+首次建议发布预览 Release，tag 使用 `v0.2.0-rc.1`，勾选 pre-release。附件放 Windows 安装 ZIP 和纯 skill ZIP。README 中的版本与技能 metadata 一致。截至 2026-10-11，用户已创建公开仓库 [EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)，源码已上传；版本 Release 尚待发布。
 
 ## 可使用的 Release 说明
 
@@ -24,4 +24,4 @@ Windows PowerShell 安装检查与格式检查已通过。包含四个新旧版�
 
 ## 在线安装地址
 
-仓库发布后再加入真实仓库链接和针对目标工具验证过的安装命令。发布前不提供虚构仓库地址，也不声称已经进入技能市场。GitHub 托管、Release 下载、第三方目录收录和客户端插件市场是不同发布渠道，各自需要验证。
+当前可下载 [仓库源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)，按安装说明使用。针对目标工具的在线安装命令需另行验证。GitHub 托管、Release 下载、第三方目录收录和客户端插件市场是不同发布渠道，各自需要验证。

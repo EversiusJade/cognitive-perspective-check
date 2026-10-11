@@ -14,7 +14,7 @@
     "Only one skill is discoverable after update",
     "File collision is refused and preserved"
   ],
-  "Artifacts": "D:\\Codex\\2026-10-10\\new-chat\\work\\skill-v02\\install-final-release",
+  "Artifacts": "Isolated temporary validation directory; not included in the release",
   "runtime": "Windows PowerShell 5.1",
   "personal_skill_directory_modified": false
 }
