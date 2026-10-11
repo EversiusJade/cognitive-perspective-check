@@ -1,0 +1,127 @@
+{
+  "skill_name": "cognitive-perspective-check",
+  "evals": [
+    {
+      "id": "solution-first-vague-context",
+      "prompt": "We should build an app for neighborhood shops to increase revenue. Can you make a feature list? I don't have much more context yet.",
+      "expected_output": "Separates the desired outcome (revenue growth) from the proposed means (an app); identifies a few possible revenue bottlenecks; asks at most a small number of decision-changing questions or offers to compare plausible cases; does not launch into a full feature list as if the app were validated."
+    },
+    {
+      "id": "messy-context-reconstruction",
+      "prompt": "My team keeps missing deadlines. Leadership says we need daily status meetings, but people already complain they spend too much time in meetings. I need to propose something by Friday.",
+      "expected_output": "Extracts the actual objective (improve deadline reliability), the proposed solution (daily meetings), the counter-signal (meeting overload), and the deadline. Briefly aligns on the working interpretation; compares a meeting-based option with at least one materially different route such as dependency visibility or work-in-progress limits; explains what would change the choice."
+    },
+    {
+      "id": "simple-task-no-calibration",
+      "prompt": "Convert 2.5 hours into minutes.",
+      "expected_output": "Answers directly (150 minutes) without invoking a multi-perspective workflow or asking clarification."
+    },
+    {
+      "id": "user-causal-claim-as-hypothesis",
+      "prompt": "Our newsletter open rate fell because the subject lines are boring. Rewrite them to be more exciting.",
+      "expected_output": "Does not accept the stated cause as established. If the task can proceed safely, provides useful rewrites while briefly noting other decision-relevant causes (such as deliverability, audience mix, or send timing) and what evidence would distinguish them; does not block the requested output with a long interrogation."
+    },
+    {
+      "id": "assistant-self-anchoring",
+      "prompt": "I want to launch a paid online course because people keep asking me questions about this topic. Help me plan the launch.",
+      "expected_output": "Separates observed interest from willingness to pay and from launch format. The assistant checks its own initial assumption that a course is the right product, gives a conditional first recommendation, and suggests a low-cost validation step if that could change the plan."
+    },
+    {
+      "id": "user-selects-deeper-path",
+      "prompt": "After your initial comparison, let's simulate the low-cost pilot option. Keep the full launch plan for later.",
+      "expected_output": "Continues only with the user-selected pilot path, states the simulation scope and assumptions, and does not expand into the full launch plan or all other branches."
+    },
+    {
+      "id": "rough-need-time-constraint",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我们学校的社团活动总是报名少，我觉得做个报名小程序可能会好一些。两周后还有一场活动，只能找两个志愿者帮忙，也不确定以前到底是宣传不到位还是大家没兴趣。你先帮我理一下该怎么做，别问一大堆；不清楚的地方先按假设分析。"
+        }
+      ],
+      "expected_output": "Preserve the two-week/two-volunteer constraints; give a useful conditional first pass; explain how reach, interest, or signup friction changes action; avoid inventing an observed cause."
+    },
+    {
+      "id": "fixed-deliverable-causal-preset",
+      "messages": [
+        {
+          "role": "user",
+          "content": "客户不回肯定是话术不好。我知道也可能是名单的问题，名单下周再查。现在请直接把这段消息改成不超过80字、语气自然的邀约，不要再向我确认方向：‘您好，我们的工具可以显著提高您的业务效率，期待尽快约时间深入沟通产品方案。’"
+        }
+      ],
+      "expected_output": "Deliver a natural invitation under 80 Chinese characters; do not reopen the settled direction or endorse the causal claim as fact."
+    },
+    {
+      "id": "chosen-pilot-simulation",
+      "messages": [
+        {
+          "role": "user",
+          "content": "我想测试有人愿不愿意买我的线上课。我没有销售数据，有30个人问过相关问题，预算500元。"
+        },
+        {
+          "role": "assistant",
+          "content": "可先验证付费意愿，也可先开发完整课程。前者投入少、不能证明规模需求；后者交付完整，但可能先承担制作成本。因为目前只有问询，我倾向先验证。可以设计小试点、比较交付形式，或先停在这里。"
+        },
+        {
+          "role": "user",
+          "content": "选小试点。只推演一次付费试讲会怎样走，先按已有30个人能收到邀请的假设，不要推演正式上线，也不要编造报名率。"
+        }
+      ],
+      "expected_output": "Simulate only the selected paid trial within the stated budget; distinguish hypothetical outcomes and real payment evidence; do not invent signup rates or expand a full launch."
+    },
+    {
+      "id": "plain-chat-no-calibration",
+      "messages": [
+        {
+          "role": "user",
+          "content": "把‘我今天因为下雨所以就没有去跑步’改得自然一点，只要一句话。"
+        }
+      ],
+      "expected_output": "Return only one natural rewritten sentence without a framing workflow."
+    },
+    {
+      "id": "question-value-not-yet-measured",
+      "prompt": "我想做一个 AI 产品给社区老人用，还没想好具体解决什么，想先聊方向。",
+      "expected_output": "Asks at most a small number of concrete goal-changing questions rather than collecting full project specifications; marks tentative interpretation and makes the next step easy to choose."
+    },
+    {
+      "id": "preserve-explicit-learning-goal",
+      "prompt": "我想学木工，亲手做一个书架。买成品更便宜也没关系，预算600元，周末有两天。帮我选一个入门方案。",
+      "expected_output": "Preserves learning woodworking as an explicit goal; does not replace it with the cheapest way to obtain furniture. Uses stated constraints and gives proportional help."
+    },
+    {
+      "id": "multi-turn-initial-cap",
+      "messages": [
+        {
+          "role": "user",
+          "content": "帮我想一个内部知识库方案。"
+        },
+        {
+          "role": "assistant",
+          "content": "主要给谁用？"
+        },
+        {
+          "role": "user",
+          "content": "客服。"
+        },
+        {
+          "role": "assistant",
+          "content": "最希望改善什么？"
+        },
+        {
+          "role": "user",
+          "content": "新人找答案。"
+        },
+        {
+          "role": "assistant",
+          "content": "目前有什么资料可用？"
+        },
+        {
+          "role": "user",
+          "content": "有FAQ和历史工单。先按这些分析。"
+        }
+      ],
+      "expected_output": "Recognizes three initial questions already answered; provides a useful first pass without restarting alignment. Does not assume AI search is the only solution."
+    }
+  ]
+}

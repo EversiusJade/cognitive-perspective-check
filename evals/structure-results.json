@@ -1,0 +1,32 @@
+{
+  "official_quick_validator": "Skill is valid!",
+  "yaml_parser": "6.0.3",
+  "checks": [
+    "frontmatter",
+    "folder/name match",
+    "MIT consistency",
+    "UI metadata",
+    "reference links",
+    "eval JSON"
+  ],
+  "entry_characters": {
+    "old": 10733,
+    "new": 7313
+  },
+  "response_characters_including_markdown": {
+    "old-trial": {
+      "chosen-pilot-simulation": 616,
+      "fixed-deliverable-causal-preset": 47,
+      "plain-chat-no-calibration": 12,
+      "rough-need-time-constraint": 620
+    },
+    "new-trial": {
+      "chosen-pilot-simulation": 642,
+      "fixed-deliverable-causal-preset": 42,
+      "plain-chat-no-calibration": 12,
+      "rough-need-time-constraint": 599
+    }
+  },
+  "token_usage": null,
+  "token_usage_note": "Actual model reasoning and token usage were not exposed; character counts are not token counts."
+}

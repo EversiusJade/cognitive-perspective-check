@@ -1,0 +1,115 @@
+{
+  "reviewer": "author",
+  "blind_review": false,
+  "interpretation": "Observed rule conformance in four samples, not comparative utility or trigger accuracy.",
+  "runs": [
+    {
+      "version": "old",
+      "case": "rough-need-time-constraint",
+      "expectations": [
+        {
+          "text": "Uses constraints and conditional causes",
+          "passed": true,
+          "evidence": "明确“两周后的活动”“两位志愿者”，区分报名麻烦、宣传未触达、活动吸引力。"
+        },
+        {
+          "text": "Explains actionable differences",
+          "passed": true,
+          "evidence": "简单表单、目标渠道邀请、调整主题/时间分别对应不同瓶颈，承认少量反馈只是线索。"
+        }
+      ]
+    },
+    {
+      "version": "old",
+      "case": "fixed-deliverable-causal-preset",
+      "expectations": [
+        {
+          "text": "Delivers rather than reopens scope",
+          "passed": true,
+          "evidence": "回复仅是一条47字符邀约，无澄清或方向确认。"
+        }
+      ]
+    },
+    {
+      "version": "old",
+      "case": "chosen-pilot-simulation",
+      "expectations": [
+        {
+          "text": "Keeps the selected pilot scope",
+          "passed": true,
+          "evidence": "只讲付费试讲、500元支出上限；不预设多少人报名。"
+        },
+        {
+          "text": "Separates hypothetical and observed evidence",
+          "passed": true,
+          "evidence": "说明一次小试点不足以判断规模；把实际付款与口头兴趣区分。"
+        }
+      ]
+    },
+    {
+      "version": "old",
+      "case": "plain-chat-no-calibration",
+      "expectations": [
+        {
+          "text": "Directly follows one-sentence request",
+          "passed": true,
+          "evidence": "仅答“今天下雨，我就没去跑步。”"
+        }
+      ]
+    },
+    {
+      "version": "new",
+      "case": "rough-need-time-constraint",
+      "expectations": [
+        {
+          "text": "Uses constraints and conditional causes",
+          "passed": true,
+          "evidence": "暂定更多有效报名、两个志愿者；三种解释均标为假设。"
+        },
+        {
+          "text": "Explains actionable differences",
+          "passed": true,
+          "evidence": "表中行动分别为简化报名、改宣传渠道、改主题或价值说明；说明小检查不能代表全校。"
+        }
+      ]
+    },
+    {
+      "version": "new",
+      "case": "fixed-deliverable-causal-preset",
+      "expectations": [
+        {
+          "text": "Delivers rather than reopens scope",
+          "passed": true,
+          "evidence": "回复仅是一条42字符邀约，无澄清或方向确认。"
+        }
+      ]
+    },
+    {
+      "version": "new",
+      "case": "chosen-pilot-simulation",
+      "expectations": [
+        {
+          "text": "Keeps the selected pilot scope",
+          "passed": true,
+          "evidence": "仅三个试讲节点，预算上限500元，明确不代表实际报名结果。"
+        },
+        {
+          "text": "Separates hypothetical and observed evidence",
+          "passed": true,
+          "evidence": "实际付款只支持这次主题/价格/时间组合付费，不能证明正式课程需求；失败路线未虚构报名率。"
+        }
+      ]
+    },
+    {
+      "version": "new",
+      "case": "plain-chat-no-calibration",
+      "expectations": [
+        {
+          "text": "Directly follows one-sentence request",
+          "passed": true,
+          "evidence": "仅答“今天下雨，我就没去跑步。”"
+        }
+      ]
+    }
+  ]
+}

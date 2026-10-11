@@ -1,0 +1,79 @@
+# 安装、更新与首次验证
+
+## Windows：解压后双击
+
+完整安装包的根目录有两个入口，按用途选一个：
+
+| 入口 | 安装位置 | 用途 |
+|---|---|---|
+| `install-copilot.cmd` | `%USERPROFILE%\.copilot\skills\cognitive-perspective-check` | 你截图中的 GitHub Copilot App |
+| `install-shared.cmd` | `%USERPROFILE%\.agents\skills\cognitive-perspective-check` | 当前官方说明中的 Copilot / Codex 共用目录 |
+
+双击前应已完整解压 ZIP。入口只启动本地 `install.ps1` 并显示安装结果；无需下载依赖或输入 GitHub 凭证。第一次安装会显示目标路径。脚本一致时再次运行显示 `Already installed`；内容不同的旧版本会保留，提示显式更新。
+
+入口对这个 PowerShell 进程使用 `-ExecutionPolicy Bypass`，不修改系统或用户的持久执行策略。组织策略若仍阻止脚本，可用下方手动复制方式。
+
+需要先查看位置而不安装时，在包根目录的 PowerShell 运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target Copilot -WhatIf
+```
+
+纯 skill ZIP 的用户，解压后将 `cognitive-perspective-check` 整个文件夹复制到上表的 `skills` 文件夹。最终结构应是 `skills/cognitive-perspective-check/SKILL.md`，不要再套一层同名文件夹。
+
+## macOS / Linux：手动复制
+
+在解压的完整包根目录运行。以下命令拒绝覆盖已有同名 skill：
+
+```sh
+mkdir -p "$HOME/.copilot/skills"
+test ! -e "$HOME/.copilot/skills/cognitive-perspective-check" && cp -R ./skills/cognitive-perspective-check "$HOME/.copilot/skills/"
+```
+
+Codex 或共用目录将 `.copilot/skills` 换成 `.agents/skills`。这些命令尚未在 macOS/Linux 客户端实机验证；也可直接用文件管理器复制。核心 skill 为 Markdown，无平台运行依赖。
+
+## 项目级安装
+
+复制完整 skill 文件夹到项目的 `.agents/skills/`，当前官方说明中 Copilot、Codex 均支持此路径。Copilot 还支持项目 `.github/skills/`。个人目录和项目目录选一种，避免重复发现。
+
+目录依据：[GitHub 官方技能说明](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills)、[OpenAI 官方技能说明](https://learn.chatgpt.com/docs/build-skills)。核对日期：2026-10-11。
+
+## 首次验证：先点名，再看自然触发
+
+新建一轮聊天。必要时重启客户端使它重新发现本地技能。
+
+先输入：
+
+> 使用 cognitive-perspective-check。我们想做一个 App 帮小店提高收入，但还没有确定瓶颈。不要展开完整开发计划，先帮我判断问题方向。
+
+Codex 可用 `$cognitive-perspective-check` 点名；其他客户端使用自身的技能选择方式，或先用自然语言点名。
+
+你应观察到：收入目标与 App 解法被分开；问题数量很少；替代框架说明第一步会怎样不同；AI 有条件地推荐，并让你决定是否深入。
+
+然后换一个新聊天，不点名重复类似需求，检查自然触发。最后试 `2.5 小时是多少分钟？`，应该直接答 `150 分钟`。这些是手动检查目标，不代表已经在你的客户端验证成功。
+
+若找不到：检查路径和大小写、是否重复套目录、客户端是否支持个人技能、是否需要重启。若能找到但自然请求不触发：先明确调用，并记录客户端、模型、原始请求和调用状态。
+
+## 更新、保留本地修改与卸载
+
+内容不同的同名 skill 默认不覆盖。确定要更新时，在新包根目录运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target Copilot -ReplaceExisting
+```
+
+共用目录将 `Copilot` 换成 `Shared`。旧目录会移到对应 `.copilot/skill-backups/` 或 `.agents/skill-backups/`，安装结果会显示确切备份路径。备份在 `skills` 扫描目录外，避免重复发现。本地修改不会并入新版本，可从备份手动恢复。
+
+卸载：在文件管理器中只删除本次安装路径下的 `cognitive-perspective-check` 文件夹，必要时重启客户端。恢复旧版：保留当前版后，把备份的 skill 文件夹放回原安装位置。其他 skill 和配置不需要修改。
+
+## GitHub 发布后的在线安装
+
+这个包尚未绑定仓库，不能提供可运行的仓库安装地址。发布者选择真实的 `OWNER/REPOSITORY` 后，可按 GitHub CLI 官方说明使用 `gh skill preview` / `gh skill install`。该命令目前属于预览功能，要求的 CLI 版本见官方文档。下载 ZIP 和手动复制不依赖此工具。
+
+## 维护者检查
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\tests\install.tests.ps1 -TestRoot .\work\install-check
+```
+
+检查只使用指定的临时目录，不安装进用户的真实技能目录。它验证文件安装行为；模型行为需要另用 `evals/evals.json` 和实际客户端检查。

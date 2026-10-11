@@ -1,0 +1,20 @@
+{
+  "Passed": 12,
+  "Checks": [
+    "Preview does not create files",
+    "Fresh install works with spaces",
+    "Referenced continuation resource is installed",
+    "MIT license travels with the skill",
+    "Identical installation is idempotent",
+    "Different installation is refused without losing local content",
+    "Refusal preserves original skill",
+    "Explicit update backs up local changes",
+    "Backup stays outside discovery directory",
+    "New installation uses the packaged version",
+    "Only one skill is discoverable after update",
+    "File collision is refused and preserved"
+  ],
+  "Artifacts": "D:\\Codex\\2026-10-10\\new-chat\\work\\skill-v02\\install-final-release",
+  "runtime": "Windows PowerShell 5.1",
+  "personal_skill_directory_modified": false
+}
