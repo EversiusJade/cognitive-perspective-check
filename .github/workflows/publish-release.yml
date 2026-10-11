@@ -1,0 +1,53 @@
+name: Publish skill release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-release.yml'
+      - 'scripts/package_release.py'
+      - 'docs/releases/v0.2.0-rc.1.md'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-cognitive-perspective-check
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      RELEASE_TAG: v0.2.0-rc.1
+    steps:
+      - name: Fetch the exact source commit
+        run: |
+          set -euo pipefail
+          git init source
+          git -C source remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git -C source fetch --depth=1 origin "${GITHUB_SHA}"
+          git -C source checkout --detach FETCH_HEAD
+
+      - name: Build installable archives
+        run: python3 source/scripts/package_release.py --source source --output dist
+
+      - name: Publish the candidate release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          assets=("dist/cognitive-perspective-check-${RELEASE_TAG}-windows.zip" "dist/cognitive-perspective-check.zip" "dist/SHA256SUMS.txt")
+          if gh release view "${RELEASE_TAG}" --repo "${GITHUB_REPOSITORY}" --json isDraft --jq '.isDraft' > existing-draft.txt; then
+            if [ "$(cat existing-draft.txt)" = "false" ]; then
+              echo "This version is already published; keeping its existing assets."
+              gh release view "${RELEASE_TAG}" --repo "${GITHUB_REPOSITORY}" --json url --jq '.url'
+              exit 0
+            fi
+            gh release upload "${RELEASE_TAG}" "${assets[@]}" --repo "${GITHUB_REPOSITORY}" --clobber
+            gh release edit "${RELEASE_TAG}" --repo "${GITHUB_REPOSITORY}" --target "${GITHUB_SHA}" --draft=false --prerelease --latest=false --title "问题框架校准器 ${RELEASE_TAG}" --notes-file "source/docs/releases/${RELEASE_TAG}.md"
+          else
+            gh release create "${RELEASE_TAG}" "${assets[@]}" --repo "${GITHUB_REPOSITORY}" --target "${GITHUB_SHA}" --prerelease --latest=false --title "问题框架校准器 ${RELEASE_TAG}" --notes-file "source/docs/releases/${RELEASE_TAG}.md"
+          fi
