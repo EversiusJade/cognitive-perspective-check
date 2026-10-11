@@ -10,7 +10,13 @@ AI 先提炼你想解决的事，只补问会改变方向的少数信息，再�
 
 ## 安装与首次使用
 
-下载：[仓库源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)。完整解压后，打开包含 `README.md` 和安装入口的文件夹。版本安装包发布后，也可从 [Releases](https://github.com/EversiusJade/cognitive-perspective-check/releases) 下载。
+下载候选版 `v0.2.0-rc.1`：
+
+- [Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.1/cognitive-perspective-check-v0.2.0-rc.1-windows.zip)
+- [纯 Skill 包：手动安装](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.1/cognitive-perspective-check.zip)
+- [版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.1)
+
+也可下载 [完整仓库源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)。完整解压后，打开包含 `README.md` 和安装入口的文件夹。
 
 **Windows / GitHub Copilot：**下载完整安装包并解压，双击 `install-copilot.cmd`。脚本将 skill 复制到当前用户的 `.copilot/skills`，无需管理员权限、Python、Node 或额外账号。之后新建一轮聊天，输入：
 

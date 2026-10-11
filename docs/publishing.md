@@ -12,7 +12,9 @@
 
 将完整包内的文件上传到仓库根目录，确保首页直接看到 README，且入口在 `skills/cognitive-perspective-check/SKILL.md`。不要把制作时的 `work/`、临时 Python 依赖或个人凭证上传。
 
-首次建议发布预览 Release，tag 使用 `v0.2.0-rc.1`，勾选 pre-release。附件放 Windows 安装 ZIP 和纯 skill ZIP。README 中的版本与技能 metadata 一致。截至 2026-10-11，用户已创建公开仓库 [EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)，源码已上传；版本 Release 尚待发布。
+首次发布使用候选版本 `v0.2.0-rc.1`，标记为 pre-release。截至 2026-10-11，公开仓库 [EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check) 的源码与 [版本 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.1) 均已发布，附件包含 Windows 安装 ZIP、纯 skill ZIP 和 SHA-256 校验文件。
+
+仓库使用 `.github/workflows/publish-release.yml` 从触发提交构建，再发布附件。打包脚本 `scripts/package_release.py` 仅依赖 Python 标准库，保留原安装程序与 skill 的字节。已发布版本不会被流程覆盖。发布后续版本时，先更新 skill 的 `metadata.version`，再同步 workflow 的 `RELEASE_TAG`、版本说明文件路径和触发路径，并写对应版本说明。
 
 ## 可使用的 Release 说明
 
