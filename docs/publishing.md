@@ -12,11 +12,11 @@
 
 ## 发布状态
 
-截至 2026-10-11，**`v0.2.0-rc.4` 已完成源码修订，等待发布确认；前三个候选版本保留为历史版本。**
+截至 2026-10-11，**`v0.2.0-rc.4` 已公开发布为候选版；前三个候选版本保留为历史版本。**
 
 公开仓库：[EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)。上一版 [v0.2.0-rc.1 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.1) 附件包含 Windows 安装 ZIP、纯 skill ZIP 和 SHA-256 校验文件。该链接保留为历史记录。
 
-历史版本 [v0.2.0-rc.2 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.2) 与 [v0.2.0-rc.3 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.3) 保留。rc.3 发布流程成功，两个 ZIP 的尺寸与 SHA-256 均与当时本地构建一致；这只确认分发产物，没有新增安装或模型行为测试。本次计划通过同一流程发布 [v0.2.0-rc.4 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.4)，包含 Windows 安装 ZIP、纯 skill ZIP 与 SHA-256 校验文件；发布完成后更新此状态。
+历史版本 [v0.2.0-rc.2 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.2) 与 [v0.2.0-rc.3 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.3) 保留。rc.3 发布流程成功，两个 ZIP 的尺寸与 SHA-256 均与当时本地构建一致。本次 [v0.2.0-rc.4 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.4) 已公开发布为 pre-release，包含 Windows 安装 ZIP、纯 skill ZIP 与 SHA-256 校验文件。发布流程成功，GitHub 附件元数据中的三个文件尺寸与 SHA-256 均与本地构建一致；这确认分发产物，没有新增安装或模型行为测试，也不等于在实际客户端完成安装验证。
 
 README、核心规则与研究目的保持减少用户和 AI 认知窄化的定位。2026-10-11 已读取 GitHub 实际仓库元数据，确认右侧 About 已使用上面的新版简介，八个 Topics 也已保存。配置文件与实际字段同步；字段生效本身不保证搜索排名或第三方目录收录。
 
