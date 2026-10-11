@@ -15,15 +15,15 @@
 - **建议有依据，也可修正。** 同时检查用户和 AI 的假设，区分事实、推断和价值偏好；说明建议偏向、成立条件与改变建议的依据。
 - **深入由用户决定。** 首轮给出有限但可用的判断，随后只验证、比较或推演所选分支，让用户控制分析方向和阅读成本。
 
-> 当前版本：`0.2.0-rc.2`，为定位与流程修订候选版。本轮没有新增模型行为实验。[已有验证记录](evals/validation.md) 仅对应 `0.2.0-rc.1` 的安装、格式和小样本行为检查，不能作为本版效果已经得到证明的依据。
+> 当前版本：`0.2.0-rc.3`，为交付与判断边界修订候选版。本轮进行了独立静态审查，未新增模型行为实验。[本轮内容审查](docs/reviews/v0.2.0-rc.3-content-review.md) 记录修订依据；[已有验证记录](evals/validation.md) 仅对应 `0.2.0-rc.1`，不能证明本版效果。
 
 ## 安装与首次使用
 
-候选版 `v0.2.0-rc.2` 下载入口：
+候选版 `v0.2.0-rc.3` 下载入口：
 
-- [Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.2/cognitive-perspective-check-v0.2.0-rc.2-windows.zip)
-- [纯 Skill 包：手动安装](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.2/cognitive-perspective-check.zip)
-- [版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.2)
+- [Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.3/cognitive-perspective-check-v0.2.0-rc.3-windows.zip)
+- [纯 Skill 包：手动安装](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.3/cognitive-perspective-check.zip)
+- [版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.3)
 
 也可下载 [完整仓库源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)。完整解压后，打开包含 `README.md` 和安装入口的文件夹。
 
@@ -35,7 +35,7 @@
 
 也可以直接复制 `skills/cognitive-perspective-check` 整个文件夹。macOS、Linux、项目级安装、更新和排查见 [安装说明](INSTALL.md)。客户端需支持 Agent Skills；目录和行为依据 [GitHub 官方说明](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills) 与 [OpenAI 官方说明](https://learn.chatgpt.com/docs/build-skills)。
 
-自动发现已启用，但是否选择 skill 由客户端和模型决定。首次检查请明确点名，再尝试不点名的自然表达。安装成功只证明文件就位，自动调用仍需在实际客户端观察。
+配置允许 Codex 隐式调用；文件发现与实际选择仍取决于客户端的支持、配置和模型。首次检查请明确点名，再尝试不点名的自然表达。安装成功只证明文件就位，自动调用仍需在实际客户端观察。
 
 **可选：通过 skills CLI 安装。** 已有 Node.js / npm 时，可运行以下命令，并按提示选择目标客户端和一种安装位置：
 
@@ -54,16 +54,24 @@ npx skills add EversiusJade/cognitive-perspective-check --skill cognitive-perspe
 5. **形成选择与条件建议。** 根据现有证据比较选项；AI 说明自己在什么优先级和假设下偏向哪条路线，以及什么信息会改变这项建议。
 6. **由用户选择继续的分支。** 用户可以验证关键假设、比较路线、推演一个试点、纠正理解或停止。深入时只处理已选分支。
 
-第一轮交付称为 **A：有限判断与选择**；用户选择后的继续工作称为 **B：所选分支的深入**。A 应提供可用判断，不停留在提问。简短的条件后果可直接支持 A；完整情景推演只在任务需要或用户选择时展开。
+第一轮交付称为 **A：有限判断与选择**；用户选择后的继续工作称为 **B：所选分支的深入**。A 应提供可用判断，不停留在提问。简短的条件后果可直接支持 A；完整情景推演只在任务需要或用户选择时展开。A/B 是文档中的流程标记，实际回答按用户所需格式呈现。
+
+## 用户实际得到什么
+
+- **第一次讨论：**可以修正的工作理解，真正改变行动的少量视角，关键论据的来源或未知，以及成立条件明确的建议。依据不足时不硬排最佳路线，而是说明什么信息能帮助选择。
+- **已要求具体成果：**尽可能当轮给出可用的方案、文案或计划，将必要的视角检查融入成果。用户选择继续后，直接制作所选范围内的成果；交接摘要仅用于确实需要转交时。
+- **所选深入：**验证分支交付观察与判断更新，或可执行的检查和结果分支；路线比较交付影响选择的取舍；推演交付条件后果、失败信号与待查事实。
+
+比较始终服务用户已明确的目标与约束。改变目标或优先级要作为提议说明，不能由 AI 暗中替换。流程完成看用户能否理解取舍、作出下一步选择或使用成果，不看列了多少问题和视角。
 
 例如，“给小店做 App 提高收入”已经给出目标与一种手段。若关键瓶颈未知，skill 可以先补问最影响选择的信息，或明确假设后比较拉新与复购两种理解。两者可能改变投入方向，也可能保留 App 的价值。AI 应说明证据和适用条件，由用户选择后续验证或试点。
 
-详细研究目的见 [research-purpose.md](docs/research-purpose.md)；更多演示及边界例子见 [examples.md](docs/examples.md)。演示用于说明预期行为。
+详细研究目的见 [research-purpose.md](docs/research-purpose.md)；完整对话与边界演示见 [examples.md](docs/examples.md)。演示用于说明预期行为，不是效果验证。
 
 ## 范围与成本
 
 - 适用于早期项目构思、设计方向和未定决策；背景清楚时，仍可检查会实质改变判断的视角差异。
-- 通常不提问或只问一个；初始对齐累计最多三个关键问题，不按每轮重新计算。
+- 通常不提问或只问一个；初始对齐累计最多三个关键问题，不按每轮重新计算，也不把长问卷算作一问。达到限额仍缺信息时，收窄结论并说明限制。
 - 通常比较两个视角，总计最多三个；维度随问题选择，不套用通用清单，也不制造对立。
 - 第一轮进行一次有限检查，优先保持一短屏可读；之后只深入用户选中的一个 B 分支。
 - 明确的事实问题和已确定的执行任务直接完成；存在实质不匹配时才作简短提醒。
@@ -75,7 +83,7 @@ npx skills add EversiusJade/cognitive-perspective-check --skill cognitive-perspe
 
 本项目研究的是：**关键背景理解 → 核心问题分析 → 少量视角与条件后果 → 证据和取舍比较 → 用户选择深入** 这一连续流程，能否在有限成本内帮助用户和 AI 减少过早收窄判断。提问、批判性思考和多视角分析已有大量相关实践，项目价值需要通过真实使用及对照验证。
 
-[设计取舍](docs/design-decisions.md) 记录采用、拒绝和保留的方案；[对照说明](docs/comparison.md) 列出与相关项目的重叠和边界。[验证记录](evals/validation.md) 保留 `0.2.0-rc.1` 的历史结果。本次 `0.2.0-rc.2` 修订尚无新增行为实验，也未证明自然调用率、相对增益、token 节省或长期用户效果。
+[设计取舍](docs/design-decisions.md) 记录采用、拒绝和保留的方案；[对照说明](docs/comparison.md) 列出与相关项目的重叠和边界。差异化在于保留目标、有限视角比较与用户选定成果的连续组合；少问、检查 AI 和及时停止各自已有相近方法。[验证记录](evals/validation.md) 保留 `0.2.0-rc.1` 历史结果；本版尚未证明自然调用率、相对增益、token 节省或长期用户效果。
 
 ## English overview
 
@@ -86,7 +94,7 @@ npx skills add EversiusJade/cognitive-perspective-check --skill cognitive-perspe
 ```text
 skills/cognitive-perspective-check/
   SKILL.md                 核心入口
-  agents/openai.yaml       Codex 展示和自动发现元数据
+  agents/openai.yaml       Codex 展示与隐式调用元数据
   references/deepen.md     仅深入用户选中分支时读取
 install.ps1                Windows 本地安装程序
 install-copilot.cmd         Copilot 安装入口

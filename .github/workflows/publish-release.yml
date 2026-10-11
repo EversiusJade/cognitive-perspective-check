@@ -7,7 +7,7 @@ on:
     paths:
       - '.github/workflows/publish-release.yml'
       - 'scripts/package_release.py'
-      - 'docs/releases/v0.2.0-rc.2.md'
+      - 'docs/releases/v0.2.0-rc.3.md'
 
 permissions:
   contents: write
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      RELEASE_TAG: v0.2.0-rc.2
+      RELEASE_TAG: v0.2.0-rc.3
     steps:
       - name: Fetch the exact source commit
         run: |

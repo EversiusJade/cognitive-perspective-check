@@ -1,8 +1,8 @@
 # 安装、更新与首次验证
 
-本说明适用于 **认知视角检查器 · Cognitive Perspective Check**，稳定安装标识为 `cognitive-perspective-check`。当前候选版本为 `0.2.0-rc.2`。
+本说明适用于 **认知视角检查器 · Cognitive Perspective Check**，稳定安装标识为 `cognitive-perspective-check`。当前候选版本为 `0.2.0-rc.3`。
 
-下载入口：[Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.2/cognitive-perspective-check-v0.2.0-rc.2-windows.zip)、[纯 Skill 包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.2/cognitive-perspective-check.zip)、[版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.2)。
+下载入口：[Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.3/cognitive-perspective-check-v0.2.0-rc.3-windows.zip)、[纯 Skill 包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.3/cognitive-perspective-check.zip)、[版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.3)。
 
 ## Windows：解压后双击
 
@@ -13,7 +13,7 @@
 | `install-copilot.cmd` | `%USERPROFILE%\.copilot\skills\cognitive-perspective-check` | GitHub Copilot |
 | `install-shared.cmd` | `%USERPROFILE%\.agents\skills\cognitive-perspective-check` | 当前官方说明中的 Copilot / Codex 共用目录 |
 
-双击前应已完整解压 ZIP。入口只启动本地 `install.ps1` 并显示安装结果；无需下载依赖或输入 GitHub 凭证。第一次安装会显示目标路径。脚本一致时再次运行显示 `Already installed`；内容不同的旧版本会保留，提示显式更新。
+双击前应已完整解压 ZIP。入口只启动本地 `install.ps1` 并显示安装结果；无需下载依赖或输入 GitHub 凭证。第一次安装会显示目标路径。整个文件夹内容一致时再次运行显示 `Already installed`；文件集或内容不同会保留已有安装，提示显式更新。
 
 入口对这个 PowerShell 进程使用 `-ExecutionPolicy Bypass`，不修改系统或用户的持久执行策略。组织策略若仍阻止脚本，可用下方手动复制方式。
 
@@ -60,7 +60,9 @@ Codex 可用 `$cognitive-perspective-check` 点名；其他客户端使用自身
 
 ## 更新、保留本地修改与卸载
 
-内容不同的同名 skill 默认不覆盖。确定要更新时，在新包根目录运行：
+内容不同的同名 skill 默认不覆盖。建议沿用原安装渠道更新：纯 skill ZIP 额外附带手动安装 README，切换到安装器时即使版本相同，也可能被判为文件集不同。这是完整内容检查，不代表核心版本一定不同；保留保护规则，确认后显式备份更新。通过其他工具安装到链接目录的用户应沿用该工具更新，本安装器拒绝链接路径。
+
+确定要更新时，在新包根目录运行：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target Copilot -ReplaceExisting
@@ -72,11 +74,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target Copilo
 
 ## GitHub 发布后的在线安装
 
-公开仓库：[EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)。当前候选版本的发布入口为 [v0.2.0-rc.2 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.2)。也可下载 [源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)，完整解压后进入包含 `README.md` 和安装入口的文件夹，按本文的双击或手动复制步骤安装。下载 ZIP 和手动复制不依赖 GitHub CLI；在线技能安装命令需另行在目标工具验证。
+公开仓库：[EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)。当前候选版本的发布入口为 [v0.2.0-rc.3 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.3)。也可下载 [源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)，完整解压后进入包含 `README.md` 和安装入口的文件夹，按本文的双击或手动复制步骤安装。下载 ZIP 和手动复制不依赖 GitHub CLI；在线技能安装命令需另行在目标工具验证。
 
-`0.2.0-rc.2` 沿用原安装程序，本轮没有新增模型行为实验。[已有安装和行为验证记录](evals/validation.md) 对应已发布的 `0.2.0-rc.1`，不代表本版已在实际客户端验证自然调用或效果。
+`0.2.0-rc.3` 沿用原安装程序，本轮仅进行内容与分发静态审查。[已有安装和行为验证记录](https://github.com/EversiusJade/cognitive-perspective-check/blob/v0.2.0-rc.1/evals/validation.md) 对应已发布的 `0.2.0-rc.1`，不代表本版已在实际客户端验证自然调用或效果。
 
 ## 维护者检查
+
+以下命令仅用于完整仓库源码；便捷安装 ZIP 和纯 skill ZIP 不包含 `tests/`。普通使用者无需运行此步骤。
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\tests\install.tests.ps1 -TestRoot .\work\install-check
