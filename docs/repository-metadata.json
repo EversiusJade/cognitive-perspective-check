@@ -1,0 +1,13 @@
+{
+  "description": "认知视角检查器｜以减少用户与 AI 的认知窄化为目标，服务早期项目、设计与决策。少量关键补问理解背景与规则，检验双方预设，对照实质不同的视角、证据与取舍，给出条件建议，由用户选择验证或推演。Agent Skill for critical thinking and decision support: check assumptions, compare perspectives. Copilot / Codex.",
+  "topics": [
+    "agent-skills",
+    "critical-thinking",
+    "cognitive-narrowing",
+    "decision-support",
+    "problem-framing",
+    "perspective-taking",
+    "github-copilot",
+    "codex-skills"
+  ]
+}

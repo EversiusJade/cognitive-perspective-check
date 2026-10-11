@@ -1,10 +1,19 @@
 # 认知视角检查器 · Cognitive Perspective Check
 
+[English overview](#english-overview) · [项目与研究目的](docs/research-purpose.md) · [下载与安装](#安装与首次使用)
+
 **面向早期项目、设计与决策，以减少用户和 AI 的认知窄化为目标：理解关键背景，检查双方预设，对照少量有实际差别的视角，形成有依据的选择。**
 
 项目或决策在早期往往较抽象，背景、规则和内部关系也未完整表达。用户可能过早锁定一种原因或方案，AI 也可能把自己的初步理解当成结论。本 skill 将理解、分析、视角比较和条件建议连接为一次有限流程，帮助双方看见当前判断遗漏了什么，以及不同理解会怎样改变行动。
 
 理解背景是判断的基础。skill 只补问会改变判断的关键内容，不要求完整需求文档，也不推断用户未表达的“真实动机”。用户保留目标、约束和最终选择权。
+
+## 设计重点
+
+- **少量关键补问。** 从抽象描述中提取背景、规则与内部逻辑，只追问会改变判断的信息，降低用户整理完整 prompt 的负担。
+- **视角必须影响选择。** 比较能够改变行动、成功标准或取舍的视角，同时呈现原路线的合理利益，避免换几个方案却沿用同一预设。
+- **建议有依据，也可修正。** 同时检查用户和 AI 的假设，区分事实、推断和价值偏好；说明建议偏向、成立条件与改变建议的依据。
+- **深入由用户决定。** 首轮给出有限但可用的判断，随后只验证、比较或推演所选分支，让用户控制分析方向和阅读成本。
 
 > 当前版本：`0.2.0-rc.2`，为定位与流程修订候选版。本轮没有新增模型行为实验。[已有验证记录](evals/validation.md) 仅对应 `0.2.0-rc.1` 的安装、格式和小样本行为检查，不能作为本版效果已经得到证明的依据。
 
@@ -27,6 +36,14 @@
 也可以直接复制 `skills/cognitive-perspective-check` 整个文件夹。macOS、Linux、项目级安装、更新和排查见 [安装说明](INSTALL.md)。客户端需支持 Agent Skills；目录和行为依据 [GitHub 官方说明](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills) 与 [OpenAI 官方说明](https://learn.chatgpt.com/docs/build-skills)。
 
 自动发现已启用，但是否选择 skill 由客户端和模型决定。首次检查请明确点名，再尝试不点名的自然表达。安装成功只证明文件就位，自动调用仍需在实际客户端观察。
+
+**可选：通过 skills CLI 安装。** 已有 Node.js / npm 时，可运行以下命令，并按提示选择目标客户端和一种安装位置：
+
+```sh
+npx skills add EversiusJade/cognitive-perspective-check --skill cognitive-perspective-check
+```
+
+该命令依据 [官方 CLI 文档](https://github.com/vercel-labs/skills/blob/main/README.md) 提供，本轮未执行安装验证。CLI 的匿名安装遥测是 [skills.sh 目录](https://www.skills.sh/docs/faq) 的发现入口；用户可选择退出遥测。公开仓库或下载 ZIP 本身不等于已收录，本项目当前不声称已进入该目录。
 
 ## 一次连续的判断流程
 
@@ -59,6 +76,10 @@
 本项目研究的是：**关键背景理解 → 核心问题分析 → 少量视角与条件后果 → 证据和取舍比较 → 用户选择深入** 这一连续流程，能否在有限成本内帮助用户和 AI 减少过早收窄判断。提问、批判性思考和多视角分析已有大量相关实践，项目价值需要通过真实使用及对照验证。
 
 [设计取舍](docs/design-decisions.md) 记录采用、拒绝和保留的方案；[对照说明](docs/comparison.md) 列出与相关项目的重叠和边界。[验证记录](evals/validation.md) 保留 `0.2.0-rc.1` 的历史结果。本次 `0.2.0-rc.2` 修订尚无新增行为实验，也未证明自然调用率、相对增益、token 节省或长期用户效果。
+
+## English overview
+
+**Cognitive Perspective Check** is an Agent Skill for critical thinking and decision support in early project planning and design. It aims to reduce premature cognitive narrowing by understanding pivotal context, checking both user and AI assumptions, and comparing a few alternative perspectives that materially change the decision. It uses few consequential clarification questions, presents evidence and tradeoffs, and offers a conditional recommendation with explicit assumptions. The user chooses whether to validate a premise, compare options, or explore a bounded scenario. Context understanding supports the whole process; it does not stop at requirements clarification.
 
 ## 仓库内容
 
