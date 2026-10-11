@@ -1,0 +1,41 @@
+{
+  "protocol_version": "1.0",
+  "date": "2026-10-11",
+  "run_status": "not_run",
+  "original_plan_sha256": "5ec4866ad038aa2c463a8e0962e232e7424127119ee19c9029f6898beb9dd763",
+  "target_skill_version": "0.2.0-rc.4",
+  "target_tag": "v0.2.0-rc.4",
+  "remote_commit_sha": "31bc80d5967ac205c59595ac88c22ce9d64d9bac",
+  "target_skill_files_sha256": {
+    "agents/openai.yaml": "19caa68c5e0b84de4798879e7ec92659f2241fecae10fdd22fec50259249b338",
+    "LICENSE": "4d870a688a3ed8c6e1e8815dceb57dc52a4ae71723bbc4ec327d8cf41149d85d",
+    "references/deepen.md": "575091099f58e9d594facca866eb01fbc02c334b959220525c3380e130b243b9",
+    "SKILL.md": "7bf128968bea32a5d05686f694bf5e0cb5336e20107a25868198c92575f4653a"
+  },
+  "evals_original_sha256": "f12699e60794d9a146045e1158e90785643fde38eb40c5748a4b3e22f113e146",
+  "evals_updated_sha256": "102ac293dec89cc48bd212e4fd808f3a3a83371a0f0b51e328a5203df8535f8e",
+  "changed_eval_id": "chosen-pilot-simulation",
+  "previous_expected_output": "Simulate only the selected paid trial within the stated budget; distinguish hypothetical outcomes and real payment evidence; do not invent signup rates or expand a full launch.",
+  "current_expected_output": "Simulate only the selected paid trial within the 500-yuan budget and the stated assumption that all 30 contacts can receive the invitation. Distinguish proposed design parameters and hypothetical consequences from real payment evidence; do not invent signup rates, even as labeled hypothetical estimates, or expand into a full launch. Include at least one material failure or uncertain route, an observable real-world signal, and how that signal changes the next action. Interest or inquiries alone do not establish willingness to pay or scalable demand.",
+  "source_case_count": 13,
+  "selected_case_count": 8,
+  "pilot_case_count": 4,
+  "pilot_planned_slots": 48,
+  "expanded_planned_slots": 192,
+  "artifact_sha256": {
+    "calibration-examples.md": "19e5bf7c8b58ab2bed09d6264605b72db851d533e4424e38e1e1db2393c0d785",
+    "CHANGELOG.md": "fbf9c5e00ed3fbb2007dcfac39878420a40bf73acbeba9c383a379af98c16d73",
+    "experiment-design.md": "f682bddafdf27dbd73b8818aa45dfbe49663fb917c335180f4986a4adcc400d3",
+    "inputs.json": "9c1a11e3aa4c14a9120c7448a5aea906b929b8944992248d91984b4d84c2beb1",
+    "preregistration-template.json": "30964027cd40d5075971ba2a53a9a2b470919b851036d4a4549412ff432eddf2",
+    "ratings-template.csv": "ebcd794d4f0d91f3dc7a06a9b59649cce73c6b1d58b92d1e6e46d7fc2743d1e8",
+    "README.md": "744ce63c8dc465efb3548b8e0effa4d790a448f1b266d810d915004be249fd81",
+    "REPORT-template.md": "29afcadd3fca805be04b164a1ed94df1d4edc5e4dd5e6ab4e47001a566389d6f",
+    "rubric.json": "7d90fda73a44d4ffb07862f397b7e8024f024629a21ea09d069f8f2517c45ea9",
+    "run-record-template.json": "1ad59e96db59fc7be73bf073950b8a24fb292bb63f01b051a0e353673b65d21c",
+    "source-kimi.md": "5ec4866ad038aa2c463a8e0962e232e7424127119ee19c9029f6898beb9dd763"
+  },
+  "static_review_only": true,
+  "note": "文件哈希绑定本地实际内容；目标技能来源已核对远程main基准提交。实验尚未执行；真实运行配置须在采集前登记。",
+  "publication_base_commit_sha": "31bc80d5967ac205c59595ac88c22ce9d64d9bac"
+}

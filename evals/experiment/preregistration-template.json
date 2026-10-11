@@ -1,0 +1,56 @@
+{
+  "protocol_version": "1.0",
+  "status": "configuration_registration_required_before_collection",
+  "phase": "pilot",
+  "planned_slots": 48,
+  "configurations": [
+    {
+      "configuration_id": null,
+      "client_name": null,
+      "client_version": null,
+      "provider": null,
+      "model_id": null,
+      "model_version_or_alias_resolution": null,
+      "sampling_settings": {},
+      "unobservable_settings": [],
+      "system_instructions_evidence": null,
+      "other_skill_inventory_evidence": null,
+      "tools_and_permissions": null,
+      "target_skill_isolation_evidence_by_condition": {},
+      "usage_field_definitions": {},
+      "usage_coverage": null
+    }
+  ],
+  "reviewers": [
+    {
+      "reviewer_id": null,
+      "author": true
+    },
+    {
+      "reviewer_id": null,
+      "author": false
+    }
+  ],
+  "randomization_seed": null,
+  "randomized_order_file": null,
+  "blind_id_mapping_private_file": null,
+  "maximum_elapsed_minutes": null,
+  "maximum_known_cost_and_currency": null,
+  "missing_budget_policy": "登记实际可执行的时间/费用界限后才采集；不可见费用注明未知，不承诺总价。",
+  "frozen_inputs_sha256": null,
+  "frozen_rubric_sha256": null,
+  "frozen_protocol_sha256": null,
+  "target_revision_if_resolvable": null,
+  "target_skill_file_hashes": {},
+  "technical_retry_limit_per_slot": 1,
+  "behavior_failure_retry_allowed": false,
+  "locked_at": null,
+  "changes_after_lock_require_new_protocol": true,
+  "diagnostic_flags": {
+    "extra_view_difference_C2_minus_Cs_lte": 0,
+    "delivery_difference_lt": 0,
+    "applicable_protocol_compliance_lt": 0.8,
+    "comparable_full_conversation_C2_over_Cs_ratio_gt": 1.5,
+    "interpretation": "维护诊断参数，不是确认性成功判据；数据不足时不判定。"
+  }
+}

@@ -87,6 +87,8 @@ npx skills add EversiusJade/cognitive-perspective-check --skill cognitive-perspe
 
 [设计取舍](docs/design-decisions.md) 记录采用、拒绝和保留的方案；[对照说明](docs/comparison.md) 列出与相关项目的重叠和边界。差异化在于保留目标、有限视角比较与用户选定成果的连续组合；少问、检查 AI 和及时停止各自已有相近方法。[验证记录](evals/validation.md) 保留 `0.2.0-rc.1` 历史结果；本版尚未证明自然调用率、相对增益、token 节省或长期用户效果。
 
+[诊断实验方案与运行模板](evals/experiment/README.md) 已准备，包含四条件对照、48 槽位 pilot 与后续诊断扩展；实验尚未运行，目前没有本方案的相对增益、真实加载率或成本结果。
+
 ## English overview
 
 **Cognitive Perspective Check** is an Agent Skill for critical thinking and decision support in early project planning and design. It aims to reduce premature cognitive narrowing by understanding pivotal context, checking both user and AI assumptions, and comparing a few alternative perspectives that materially change the decision. It uses few consequential clarification questions, presents evidence and tradeoffs, and offers a conditional recommendation with explicit assumptions. The user chooses whether to validate a premise, compare options, or explore a bounded scenario. Context understanding supports the whole process; it does not stop at requirements clarification.
@@ -104,6 +106,7 @@ install-shared.cmd          共用目录安装入口
 INSTALL.md                 手动安装、更新、卸载和排查
 docs/                      研究目的、演示、设计取舍、对照
 evals/                     行为场景与历史验证记录
+  experiment/              四条件诊断方案、输入、量表与运行模板（尚未运行）
 tests/                     不依赖 Pester 的安装检查
 LICENSE                    MIT
 ```

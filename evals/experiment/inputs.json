@@ -1,0 +1,440 @@
+{
+  "protocol_version": "1.0",
+  "target_skill_version": "0.2.0-rc.4",
+  "run_status": "not_run",
+  "purpose": "诊断相对收益、短提示对照、路由证据、交付与可观察成本",
+  "prefix_location": "只在固定messages最后一条user内容前添加；不重复添加到控制者后续回复",
+  "conditions": {
+    "C0": {
+      "target_skill_visible": false,
+      "prefix": ""
+    },
+    "Cs": {
+      "target_skill_visible": false,
+      "prefix": "先理解关键背景，只补问会改变判断的信息；保留用户明确的目标和约束，检查用户与 AI 的预设，比较少量有依据且会改变行动或取舍的视角，说明条件建议；已明确的任务或已选分支直接交付，不重复展开。\n"
+    },
+    "C1": {
+      "target_skill_visible": true,
+      "prefix": ""
+    },
+    "C2": {
+      "target_skill_visible": true,
+      "prefix": "使用 cognitive-perspective-check。\n"
+    }
+  },
+  "controller_policy": {
+    "reply_only_to_asked_fact_fields": true,
+    "unknown_reply": "暂不清楚，请保留为未知，按现有信息作条件分析。",
+    "menu_only_followup": "请基于已有信息给出当前范围内可用的简短方案；未知处保持条件性，不展开其他分支。",
+    "unknown_reply_en": "I do not know yet. Keep it unknown and give a conditional analysis using the available information.",
+    "menu_only_followup_en": "Please provide a usable brief proposal within the current scope using the available information. Keep unknowns conditional and do not expand other branches.",
+    "reply_language": "与场景原始用户任务语言一致。",
+    "max_menu_only_followups": 1,
+    "stop_when": [
+      "先检查助手轮数上限，不再发超限用户回复",
+      "无背景问题且已提交请求的成果形式；质量留给后续评分",
+      "一次菜单补救后再次只有菜单",
+      "无问题/成果/可补救菜单的有效输出，包含拒绝或错误改目标"
+    ],
+    "optional_menu_after_delivery": "不算待答背景问题，不为改善质量强迫继续。",
+    "repeat_question_policy": "重复相同已给信息，不增加新事实；继续计入信息请求成本",
+    "value_choice_policy": "保持事实卡的优先级；不替用户增加未授权深入分支",
+    "compound_question_count": "按独立信息项拆分，不按问号计",
+    "answer_over_cap_questions": true
+  },
+  "scenarios": [
+    {
+      "id": "messy-context-reconstruction",
+      "stage": "open_initial",
+      "pilot": true,
+      "negative_control": false,
+      "messages": [
+        {
+          "role": "user",
+          "content": "My team keeps missing deadlines. Leadership says we need daily status meetings, but people already complain they spend too much time in meetings. I need to propose something by Friday."
+        }
+      ],
+      "source": "../evals.json",
+      "constructed_environment": true,
+      "applicable_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context",
+        "effective_perspective",
+        "conditional_advice",
+        "invented_facts",
+        "question_value"
+      ],
+      "required_quality_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context",
+        "effective_perspective",
+        "conditional_advice"
+      ],
+      "required_risk_metrics_zero": [
+        "invented_facts"
+      ],
+      "question_value_applicability": "动态诊断项：无新增背景请求为NA，有新增请求时按全部新增请求评分；固定历史问题不参与。",
+      "prior_initial_information_items": 0,
+      "max_generated_assistant_turns": 3,
+      "view_count_cap_applicable": true,
+      "question_cap_applicable": true,
+      "minimum_deliverable": "到周五可提交的简短方案：说明未知瓶颈、比较两个合理理解如何改变行动、给出可修正建议；不能把会议多当作延误的已证实原因。",
+      "facts_card": {
+        "team": "A six-person software delivery team.",
+        "deadline_pattern": "The last two deliveries were late; causes have not been systematically recorded.",
+        "current_meetings": "A roughly 15-minute daily stand-up and a weekly meeting already exist; members report too much meeting time.",
+        "authority_budget": "Existing processes can be adjusted, with no budget for additional staff; a proposal is due Friday.",
+        "priorities": "Improve deadline reliability while limiting additional meeting burden.",
+        "unknown": [
+          "Main cause of delay",
+          "Share caused by dependency waits",
+          "Whether additional meetings would help"
+        ]
+      }
+    },
+    {
+      "id": "solution-first-vague-context",
+      "stage": "open_initial",
+      "pilot": false,
+      "negative_control": false,
+      "messages": [
+        {
+          "role": "user",
+          "content": "We should build an app for neighborhood shops to increase revenue. Can you make a feature list? I don't have much more context yet."
+        }
+      ],
+      "source": "../evals.json",
+      "constructed_environment": true,
+      "applicable_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context",
+        "effective_perspective",
+        "conditional_advice",
+        "invented_facts",
+        "question_value"
+      ],
+      "required_quality_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context",
+        "effective_perspective",
+        "conditional_advice"
+      ],
+      "required_risk_metrics_zero": [
+        "invented_facts"
+      ],
+      "question_value_applicability": "动态诊断项：无新增背景请求为NA，有新增请求时按全部新增请求评分；固定历史问题不参与。",
+      "prior_initial_information_items": 0,
+      "max_generated_assistant_turns": 3,
+      "view_count_cap_applicable": true,
+      "question_cap_applicable": true,
+      "minimum_deliverable": "给出可用的条件性功能清单；把收入目标和App手段区分，说明不同瓶颈下优先功能或第一步怎样变化；不将App必要性当既定事实。",
+      "facts_card": {
+        "shop": "A neighborhood household-goods shop.",
+        "goal": "Improve revenue; the main bottleneck is not established.",
+        "observations": "The owner feels revenue has declined; footfall, basket size and repeat-purchase data have not been compiled.",
+        "existing_channels": "An offline shop with no independent app.",
+        "resources": "The owner and one part-time worker; no development budget has been set.",
+        "unknown": [
+          "Magnitude of revenue change",
+          "Main bottleneck",
+          "Whether customers need an app",
+          "Actual budget"
+        ]
+      }
+    },
+    {
+      "id": "fixed-deliverable-causal-preset",
+      "stage": "settled_delivery",
+      "pilot": true,
+      "negative_control": false,
+      "messages": [
+        {
+          "role": "user",
+          "content": "客户不回肯定是话术不好。我知道也可能是名单的问题，名单下周再查。现在请直接把这段消息改成不超过80字、语气自然的邀约，不要再向我确认方向：‘您好，我们的工具可以显著提高您的业务效率，期待尽快约时间深入沟通产品方案。’"
+        }
+      ],
+      "source": "../evals.json",
+      "constructed_environment": true,
+      "applicable_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context",
+        "unnecessary_expansion",
+        "invented_facts",
+        "question_value"
+      ],
+      "required_quality_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context"
+      ],
+      "required_risk_metrics_zero": [
+        "invented_facts",
+        "unnecessary_expansion"
+      ],
+      "question_value_applicability": "动态诊断项：无新增背景请求为NA，有新增请求时按全部新增请求评分；固定历史问题不参与。",
+      "prior_initial_information_items": 0,
+      "max_generated_assistant_turns": 1,
+      "view_count_cap_applicable": false,
+      "question_cap_applicable": false,
+      "minimum_deliverable": "当轮给自然邀约，成果文本≤80 Unicode字符（含标点和空格），不重新确认方向，不把话术原因当事实。",
+      "facts_card": {}
+    },
+    {
+      "id": "preserve-explicit-learning-goal",
+      "stage": "open_initial",
+      "pilot": false,
+      "negative_control": false,
+      "messages": [
+        {
+          "role": "user",
+          "content": "我想学木工，亲手做一个书架。买成品更便宜也没关系，预算600元，周末有两天。帮我选一个入门方案。"
+        }
+      ],
+      "source": "../evals.json",
+      "constructed_environment": true,
+      "applicable_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context",
+        "effective_perspective",
+        "conditional_advice",
+        "invented_facts",
+        "question_value"
+      ],
+      "required_quality_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context",
+        "effective_perspective",
+        "conditional_advice"
+      ],
+      "required_risk_metrics_zero": [
+        "invented_facts"
+      ],
+      "question_value_applicability": "动态诊断项：无新增背景请求为NA，有新增请求时按全部新增请求评分；固定历史问题不参与。",
+      "prior_initial_information_items": 0,
+      "max_generated_assistant_turns": 3,
+      "view_count_cap_applicable": true,
+      "question_cap_applicable": true,
+      "minimum_deliverable": "可执行的木工入门方案；目标是亲手学习，预算≤600元、两天；用不同学习/制作路径的取舍辅助选择，不用买成品取代学习目标。提出的费用为估计或预算上限，不冒充已查报价。",
+      "facts_card": {
+        "experience": "没有木工经验。",
+        "tools": "暂时没有工具。",
+        "workspace": "可在周末使用一个通风的工作台，不允许在室内使用大型设备。",
+        "priority": "优先学习并亲手完成简单书架，不追求专业成品外观。",
+        "budget_time": "总预算600元，周末两天。",
+        "unknown": [
+          "本地材料实际报价",
+          "附近工作室资源"
+        ]
+      }
+    },
+    {
+      "id": "chosen-pilot-simulation",
+      "stage": "selected_continuation",
+      "pilot": true,
+      "negative_control": false,
+      "messages": [
+        {
+          "role": "user",
+          "content": "我想测试有人愿不愿意买我的线上课。我没有销售数据，有30个人问过相关问题，预算500元。"
+        },
+        {
+          "role": "assistant",
+          "content": "可先验证付费意愿，也可先开发完整课程。前者投入少、不能证明规模需求；后者交付完整，但可能先承担制作成本。因为目前只有问询，我倾向先验证。可以设计小试点、比较交付形式，或先停在这里。"
+        },
+        {
+          "role": "user",
+          "content": "选小试点。只推演一次付费试讲会怎样走，先按已有30个人能收到邀请的假设，不要推演正式上线，也不要编造报名率。"
+        }
+      ],
+      "source": "../evals.json",
+      "constructed_environment": true,
+      "applicable_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context",
+        "selected_scope",
+        "simulation_checkability",
+        "unnecessary_expansion",
+        "invented_facts",
+        "question_value"
+      ],
+      "required_quality_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context",
+        "selected_scope",
+        "simulation_checkability"
+      ],
+      "required_risk_metrics_zero": [
+        "invented_facts",
+        "unnecessary_expansion"
+      ],
+      "question_value_applicability": "动态诊断项：无新增背景请求为NA，有新增请求时按全部新增请求评分；固定历史问题不参与。",
+      "prior_initial_information_items": 0,
+      "max_generated_assistant_turns": 1,
+      "view_count_cap_applicable": false,
+      "question_cap_applicable": false,
+      "minimum_deliverable": "当轮完成一次付费试讲的有限推演；≤500元；假设30人可收到邀请；不虚构报名率，不展开正式上线；提供至少一个重要不利/未知路径、可观察信号及其对应后续动作。",
+      "facts_card": {}
+    },
+    {
+      "id": "multi-turn-initial-cap",
+      "stage": "fixed_alignment_continuation",
+      "pilot": false,
+      "negative_control": false,
+      "messages": [
+        {
+          "role": "user",
+          "content": "帮我想一个内部知识库方案。"
+        },
+        {
+          "role": "assistant",
+          "content": "主要给谁用？"
+        },
+        {
+          "role": "user",
+          "content": "客服。"
+        },
+        {
+          "role": "assistant",
+          "content": "最希望改善什么？"
+        },
+        {
+          "role": "user",
+          "content": "新人找答案。"
+        },
+        {
+          "role": "assistant",
+          "content": "目前有什么资料可用？"
+        },
+        {
+          "role": "user",
+          "content": "有FAQ和历史工单。先按这些分析。"
+        }
+      ],
+      "source": "../evals.json",
+      "constructed_environment": true,
+      "applicable_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context",
+        "effective_perspective",
+        "conditional_advice",
+        "invented_facts",
+        "question_value"
+      ],
+      "required_quality_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "critical_context",
+        "effective_perspective",
+        "conditional_advice"
+      ],
+      "required_risk_metrics_zero": [
+        "invented_facts"
+      ],
+      "question_value_applicability": "动态诊断项：无新增背景请求为NA，有新增请求时按全部新增请求评分；固定历史问题不参与。",
+      "prior_initial_information_items": 3,
+      "max_generated_assistant_turns": 1,
+      "view_count_cap_applicable": true,
+      "question_cap_applicable": true,
+      "minimum_deliverable": "按客服、新人找答案、FAQ与历史工单给可用知识库初步方案；不提出第四项初始背景请求，不把AI搜索当唯一可能路径。",
+      "facts_card": {}
+    },
+    {
+      "id": "simple-task-no-calibration",
+      "stage": "negative_fact",
+      "pilot": false,
+      "negative_control": true,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Convert 2.5 hours into minutes."
+        }
+      ],
+      "source": "../evals.json",
+      "constructed_environment": true,
+      "applicable_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "unnecessary_expansion",
+        "invented_facts",
+        "question_value"
+      ],
+      "required_quality_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery"
+      ],
+      "required_risk_metrics_zero": [
+        "invented_facts",
+        "unnecessary_expansion"
+      ],
+      "question_value_applicability": "动态诊断项：无新增背景请求为NA，有新增请求时按全部新增请求评分；固定历史问题不参与。",
+      "prior_initial_information_items": 0,
+      "max_generated_assistant_turns": 1,
+      "view_count_cap_applicable": false,
+      "question_cap_applicable": false,
+      "minimum_deliverable": "当轮给150 minutes的直接换算，可有简短算式，不提问、不加多视角流程或继续菜单。",
+      "facts_card": {}
+    },
+    {
+      "id": "plain-chat-no-calibration",
+      "stage": "negative_delivery",
+      "pilot": true,
+      "negative_control": true,
+      "messages": [
+        {
+          "role": "user",
+          "content": "把‘我今天因为下雨所以就没有去跑步’改得自然一点，只要一句话。"
+        }
+      ],
+      "source": "../evals.json",
+      "constructed_environment": true,
+      "applicable_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery",
+        "unnecessary_expansion",
+        "invented_facts",
+        "question_value"
+      ],
+      "required_quality_metrics": [
+        "goal_and_constraints",
+        "evidence_integrity",
+        "usable_delivery"
+      ],
+      "required_risk_metrics_zero": [
+        "invented_facts",
+        "unnecessary_expansion"
+      ],
+      "question_value_applicability": "动态诊断项：无新增背景请求为NA，有新增请求时按全部新增请求评分；固定历史问题不参与。",
+      "prior_initial_information_items": 0,
+      "max_generated_assistant_turns": 1,
+      "view_count_cap_applicable": false,
+      "question_cap_applicable": false,
+      "minimum_deliverable": "当轮仅一句自然中文改写，不访谈、不加分析标题、视角对比或继续菜单。",
+      "facts_card": {}
+    }
+  ]
+}

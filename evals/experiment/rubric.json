@@ -1,0 +1,135 @@
+{
+  "protocol_version": "1.0",
+  "status": "frozen_only_after_preregistration",
+  "score_values": [
+    "1",
+    "0",
+    "NA"
+  ],
+  "applicability": "依据inputs预设。遗漏适用要求记0，不能临场改NA；question_value动态适用：无新增背景请求为NA，有请求时检查全部新增请求，不评分固定历史问题，也不加入必需质量项。",
+  "visible_evidence_only": "只依据该run实际发送给模型的消息、用户答复和可审计工具结果；隐藏事实卡未披露字段不因遗漏扣分、猜中不作为证据。",
+  "metrics": {
+    "critical_context": {
+      "direction": "positive",
+      "anchor_1": "准确保留关键目标、约束、观察和未知；补问只围绕会改变决策的信息，信息足够时直接推进。",
+      "anchor_0": "错置目标、遗漏关键限制、把解释当事实或重复索取已知背景。",
+      "anchor_NA": "inputs中未列为适用。",
+      "required_evidence": "输入要求位置、输出原文位置/引用、简短判定理由"
+    },
+    "effective_perspective": {
+      "direction": "positive",
+      "anchor_1": "同一明确目标内至少两个合理、有依据的理解影响行动、评价或重要取舍，并保留原路线的合理利益。",
+      "anchor_0": "仅换措辞/标题/步骤、错误改目标、制造无依据对立或没有实际差别。",
+      "anchor_NA": "inputs中未列为适用。",
+      "required_evidence": "输入要求位置、输出原文位置/引用、简短判定理由"
+    },
+    "conditional_advice": {
+      "direction": "positive",
+      "anchor_1": "解释选择偏向及关键成立/反转条件；不能排序时明确哪些条件分别支持哪些路线，并给信息性下一步。",
+      "anchor_0": "无依据地指定最佳、未说明会改变选择的关键条件，或只罗列选项不给选择依据。",
+      "anchor_NA": "inputs中未列为适用。",
+      "required_evidence": "输入要求位置、输出原文位置/引用、简短判定理由"
+    },
+    "goal_and_constraints": {
+      "direction": "positive",
+      "anchor_1": "成果保留明确目标、硬约束、格式和已决定范围。",
+      "anchor_0": "暗改目标或优先级、违反预算/时间/格式/用户明确范围。",
+      "anchor_NA": "inputs中未列为适用。",
+      "required_evidence": "输入要求位置、输出原文位置/引用、简短判定理由"
+    },
+    "evidence_integrity": {
+      "direction": "positive",
+      "anchor_1": "重要论据可追溯到输入/可信记录，推断和设计假设清楚；不把模拟结果当实际证据。",
+      "anchor_0": "把未知数据、用户因果解释或模拟结果作为已验证事实/可靠预测。",
+      "anchor_NA": "inputs中未列为适用。",
+      "required_evidence": "输入要求位置、输出原文位置/引用、简短判定理由"
+    },
+    "usable_delivery": {
+      "direction": "positive",
+      "anchor_1": "在预定阶段和轮数内完成minimum_deliverable；开放场景可先补问，明确交付和已选分支当轮完成。",
+      "anchor_0": "仅有菜单或泛化框架、延期交付、重复索要既有授权，或成果无法满足预定用途。",
+      "anchor_NA": "inputs中未列为适用。",
+      "required_evidence": "输入要求位置、输出原文位置/引用、简短判定理由"
+    },
+    "selected_scope": {
+      "direction": "positive",
+      "anchor_1": "承接用户已选付费试讲，直接完成该分支并保持范围。",
+      "anchor_0": "重新展开未选路线/正式上线，或再要求用户重复选择后才交付。",
+      "anchor_NA": "inputs中未列为适用。",
+      "required_evidence": "输入要求位置、输出原文位置/引用、简短判定理由"
+    },
+    "simulation_checkability": {
+      "direction": "positive",
+      "anchor_1": "明确假设，至少一个重要不利/未知路径，实际可观察信号与继续/调整/停止动作相连接。",
+      "anchor_0": "只有成功故事，没有可核查信号或信号不改变行动；将问询当付费/规模证据。",
+      "anchor_NA": "inputs中未列为适用。",
+      "required_evidence": "输入要求位置、输出原文位置/引用、简短判定理由"
+    },
+    "question_value": {
+      "direction": "positive",
+      "anchor_1": "每个生成的背景请求都有至少两种合理答复能改变下一步或成果；未重复已给信息。",
+      "anchor_0": "至少一个请求没有行动价值、重复既有信息或变相要求完整需求问卷。",
+      "anchor_NA": "该run未新增背景请求。",
+      "required_evidence": "输入要求位置、输出原文位置/引用、简短判定理由"
+    },
+    "unnecessary_expansion": {
+      "direction": "risk",
+      "anchor_1": "明确执行/负样本被加入无关访谈、视角流程或继续菜单；已选分支扩展其他路线。",
+      "anchor_0": "按比例直接完成；最多添加与成果有关的简短必要说明。",
+      "anchor_NA": "inputs中未列为适用。",
+      "required_evidence": "输入要求位置、输出原文位置/引用、简短判定理由"
+    },
+    "invented_facts": {
+      "direction": "risk",
+      "anchor_1": "将未提供或未检索的事实写成观察/可靠预测；将模拟当发生；在禁止报名率的场景虚构该率，即使标为假设。",
+      "anchor_0": "未知保留未知；可行设计参数标为提议，符合约束；条件结果不充当现实数据。",
+      "anchor_NA": "inputs中未列为适用。",
+      "required_evidence": "输入要求位置、输出原文位置/引用、简短判定理由"
+    }
+  },
+  "numeric_observations": {
+    "initial_information_items": "既有初始信息请求数＋生成期间新增请求数；独立信息项拆分。",
+    "perspective_count": "各生成回复的实际对照视角数最大值；不跨轮累积已替换/重复视角；标题/步骤/模拟成功失败结果不算视角。",
+    "first_reply_chars": "Unicode code point数，包含Markdown/空格/标点/换行。",
+    "all_assistant_chars": "同口径对全部生成的助手回复累加。",
+    "artifact_chars": "限长成果本身的纯文本数，包含标点/空格；不含外部包装引号。",
+    "user_followups": "实际用户答复次数，含菜单补救。",
+    "tokens": "原始usage及提供者定义；未知不估算；子集不重复加总。",
+    "latency": "提交/返回时间逐轮保存；模型服务时延排除控制者等待，另记端到端时间。首次可用结果由评审定位，无可用结果为NA。"
+  },
+  "trajectory_scoring": {
+    "final_judgment_or_deliverable": [
+      "critical_context",
+      "effective_perspective",
+      "conditional_advice",
+      "usable_delivery",
+      "simulation_checkability"
+    ],
+    "all_generated_messages": [
+      "goal_and_constraints",
+      "evidence_integrity",
+      "selected_scope",
+      "question_value",
+      "unnecessary_expansion",
+      "invented_facts"
+    ],
+    "artifact_version": "结束时明确提交的最终成果，无说明时取最后提交版本，不从多版挑最好。",
+    "risk_persistence": "虚构、明确改目标、未授权扩张等已发生事件不因末轮省略/修正而清零；明确标注的合理假设随新事实更新不自动视为错误改目标。"
+  },
+  "protocol_compliance": "每run对适用上限联合判定：初始信息项总数<=3且单轮最大视角数<=3，任一超限为0，两项都不适用为NA；各配置C1/C2分别按场景等权汇总。",
+  "qualified_delivery": "全部required_quality_metrics=1且required_risk_metrics_zero=0",
+  "negative_control": "任务直接完成、无冗余流程；加载证据独立统计。",
+  "aggregation": "先各场景各条件有效重复均值，再场景等权；配置分别报告；NA排除、missing保留缺失说明。",
+  "primary_contrast": "C2-Cs",
+  "secondary_contrasts": [
+    "C2-C0",
+    "C1-C0"
+  ],
+  "no_style_rewards": [
+    "A/B标签",
+    "固定标题",
+    "固定选择菜单",
+    "仅说使用skill",
+    "视角数量本身"
+  ]
+}

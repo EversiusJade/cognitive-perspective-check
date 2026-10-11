@@ -67,7 +67,7 @@
           "content": "选小试点。只推演一次付费试讲会怎样走，先按已有30个人能收到邀请的假设，不要推演正式上线，也不要编造报名率。"
         }
       ],
-      "expected_output": "Simulate only the selected paid trial within the stated budget; distinguish hypothetical outcomes and real payment evidence; do not invent signup rates or expand a full launch."
+      "expected_output": "Simulate only the selected paid trial within the 500-yuan budget and the stated assumption that all 30 contacts can receive the invitation. Distinguish proposed design parameters and hypothetical consequences from real payment evidence; do not invent signup rates, even as labeled hypothetical estimates, or expand into a full launch. Include at least one material failure or uncertain route, an observable real-world signal, and how that signal changes the next action. Interest or inquiries alone do not establish willingness to pay or scalable demand."
     },
     {
       "id": "plain-chat-no-calibration",
