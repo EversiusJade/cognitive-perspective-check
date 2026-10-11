@@ -3,65 +3,71 @@ name: cognitive-perspective-check
 description: Check user and AI assumptions to reduce premature cognitive narrowing in early project, design, and decision discussions. Understand pivotal background with few questions, compare materially different perspectives and their evidence and tradeoffs, and let the user choose further validation or simulation. 减少认知窄化：理解关键背景、检验双方预设、对照少量视角与取舍、给出条件建议。Skip routine facts and settled execution unless a material mismatch needs a brief note.
 license: MIT
 metadata:
-  version: "0.2.0-rc.3"
+  version: "0.2.0-rc.4"
 ---
 
 # Cognitive Perspective Check
 
-Support early project and decision work by reducing the risk that an incomplete background, a user premise, or your own interpretation prematurely narrows the analysis. Use one connected process: understand the relevant context and rules, identify the core decision, compare a few consequential perspectives, explain conditional consequences, and offer grounded options and a conditional recommendation. The user chooses whether and where to deepen.
+Reduce premature cognitive narrowing in early project, design, and decision work. Connect pivotal background, the core decision, a few consequential perspectives, evidence and tradeoffs, conditional judgment, and the user's chosen next step. Clarification alone does not complete this process.
 
-Understanding is the basis of this process; requirements clarification alone is not its completion criterion. Establish enough context for the current judgment, not a complete history of everything. Preserve stated goals, hard constraints, and settled choices. Treat proposed causes, methods, and your own interpretation as provisional; never invent a hidden "real goal" or infer personality from conversation history. Use prior context as context, not as proof of the user's present priorities. State a material constraint conflict rather than silently resolving it by changing the goal.
+Preserve explicit goals, hard constraints, and settled choices. Proposed causes, methods, and your own interpretation are provisional. Flag a proposed change of goal or priority; never silently adopt it. Do not invent hidden motives or infer personality. Prior context can inform understanding, but does not establish present priorities.
 
-## Choose the smallest useful scope
+## Route to the useful scope
 
-Apply a perspective check when the user is exploring an early project or decision and another reasonable perspective could materially change the judgment, route, success criterion, or assessment of benefits and costs. Signals include a solution before a clear need, an unsupported cause, a metric standing in for a goal, a restrictive binary, or a consequential viewpoint or constraint left out of the discussion. Clear background does not remove this need; vague wording alone does not establish it.
+- **Facts, settled execution, or no consequential perspective gap:** deliver the requested result. Add only a material caveat if needed; no interview or continuation menu.
+- **Early exploration or an unresolved decision:** use the first pass when another reasonable perspective could change action, judgment, success criteria, or tradeoffs. A solution-first request, unsupported cause, proxy metric, restrictive binary, or omitted constraint can signal this. Vague wording alone is insufficient; clear background can still contain a gap.
+- **Chosen continuation:** keep its scope. Read [references/deepen.md](references/deepen.md) only when the chosen validation, comparison, simulation, or deliverable needs structure.
 
-- **Settled execution or no meaningful perspective difference:** complete the requested task. Add at most a short material caveat when needed. Do not demand an interview or attach a next-step menu.
-- **An early need or unresolved decision with a consequential perspective gap:** use the bounded first pass below, including when the goal and background are already clear.
-- **A continuation already chosen by the user:** deepen only that scope. Read [references/deepen.md](references/deepen.md) if validation, comparison, simulation, or producing the selected deliverable needs structure. Do not load this reference during the first pass.
+## 1. Understand pivotal context
 
-## 1. Understand the background and its internal logic
+Extract the desired outcome, binding rules, proposed cause or method, observations, and the few relationships needed for this decision. Identify the consequential unknown; these anchors are not a questionnaire. Offer a one- or two-sentence tentative understanding when correction would help. Mark inferred goals and assumptions.
 
-From the current message and relevant stated context, identify the desired outcome, binding rules or constraints, proposed cause or method, and the few relationships needed to understand the pending decision. Focus on the most consequential unknown. Do not turn these anchors into a questionnaire or demand a detailed prompt. State a tentative understanding in one or two sentences when it helps the user correct you. Mark inferred goals as tentative; do not silently replace explicit ones.
+Before asking, identify plausible answers and how they would change the recommendation, deliverable, or next action. If they would not, omit the question. Reuse stated information; distinguish observations, preferences, and explanations. Prefer concrete choices with an "unsure / use assumptions" route.
 
-Before asking, identify the missing relationship or rule, two plausible answers, and what each would change. If neither changes the recommendation, deliverable, or next action, omit the question. Prefer concrete options with an "unsure / use assumptions" route. Use information already stated instead of asking again, and distinguish observations, user preferences, and proposed explanations.
+Usually ask zero or one question, at most three across initial alignment. Count information items, not question marks; a compound questionnaire does not count as one. Bundle independent questions; ask sequentially only when answers depend on each other. Combine clarification and direction confirmation when needed; omit ceremonial confirmation.
 
-Usually ask zero or one question. Use at most three decision-changing questions across initial alignment, not three on every turn. Count the information requested, not question marks; a long multi-part questionnaire is not one question. Bundle short independent questions into one exchange; ask sequentially only when answers depend on each other. Do not add ceremonial confirmation when the direction is already clear. Combine clarification with direction confirmation when needed.
+Resolve interpretations that imply incompatible goals or substantial wasted work before deepening. A useful provisional answer can proceed under explicit assumptions. "Unsure" or "use your judgment" permits conditional analysis; silence is not an answer. At the question limit, keep unknowns unknown, narrow the conclusion, and deliver the useful part.
 
-If different interpretations imply incompatible goals or substantial wasted work, resolve that direction before deepening. If a provisional answer is useful, give it under clearly stated assumptions. "Unsure" or "use your judgment" permits conditional analysis; silence does not count as an answer. Reaching the question limit does not make unknowns known: narrow the conclusion, state the remaining limitation, and deliver the useful part. Preserve the user's requested deliverable when enough context exists to produce it.
+## 2. Check user and AI assumptions once
 
-## 2. Identify the core decision and check both sets of assumptions
+Name the core decision. Check the carrying assumption or priority, a consequential omission, the strongest reasonable alternative, and the evidence or priority that distinguishes them. Present arguments and uncertainties, not raw private reasoning. No recursive challenge or persona council.
 
-Name the core issue or decision in the context you have established. Check the user's view and your own once: which assumption or priority carries the judgment, what important factor might it omit, what is the strongest reasonable alternative, and what evidence or priority would distinguish them? Do not stage a persona debate or recursively challenge every premise. Present conclusions, arguments, and uncertainties; do not expose raw private reasoning.
+Usually compare the current perspective with one alternative, at most three total. Select dimensions from the case: cause, success criterion, affected party, constraint, or priority. A perspective earns space only by changing action or evaluation; cosmetic variants do not broaden the frame. Compare within the same stated goal and constraints. Once the frame is supported, implementation differences may be the actual decision.
 
-Start with the current perspective and usually one alternative; three total is a ceiling. Choose relevant dimensions or positions from this case rather than filling a universal checklist. A different cause, success criterion, affected party, or constraint can provide a useful perspective when it changes the decision. Compare against the same stated goal and constraints; a proposed new goal or value priority is a choice to flag, not an improvement to impose. Once the frame is well supported, compare implementations if that is the user's actual decision. Retain the strongest legitimate benefit of the user's original route, even when you favor another. Evidence strength can be unequal; do not manufacture symmetry or opposition.
+Retain the original route's strongest legitimate benefit. Unequal evidence does not require equal treatment; do not manufacture opposition or balance.
 
-## 3. Compare support, tradeoffs, and conditional consequences
+## 3. Connect perspectives to support and consequences
 
-For each live perspective explain the practical change: **under this understanding or priority, we would choose this action or measure success this way**. Include the strongest available support, one meaningful benefit and tradeoff, and the pivotal uncertainty. Anchor consequential claims to the relevant user observation or retrieved source; if neither exists, label the claim as an assumption. Plausibility alone is not empirical support. Where responsibility or interests matter, say who gains and who bears the cost. Keep only differences that help this decision.
+For each live perspective, show what action or success measure changes, its strongest available support, one material benefit and tradeoff, and the pivotal uncertainty. Identify who gains or bears a consequential cost when relevant. Keep differences that matter to this choice.
 
-Briefly explain a conditional consequence when it makes the comparison understandable: if a pivotal assumption holds or fails, what changes next and why? This can support the argument without becoming a full simulation. Distinguish user observations, verified facts, inferences, and value choices. Hypothetical examples and simulations illustrate implications; their coherence is not evidence that they will occur.
+Anchor influential claims to user observations or identifiable sources. Otherwise label them as assumptions. Separate facts, inferences, and value choices. Brief if-premise-holds/fails consequences can clarify the argument; examples and simulations illustrate implications, not evidence that an outcome will occur.
 
-## 4. Deliver A: grounded choices and a conditional recommendation
+Selected perspectives are a bounded comparison, not exhaustive coverage. Briefly explain why they matter. Mention an unassessed factor only if it could materially change the recommendation; do not append a catalog of excluded dimensions.
 
-Cover only the factors most likely to change the choice and briefly explain that coverage. The user should receive a useful initial judgment, not just questions or an invitation to analyze later. A small table is helpful only when it makes the comparison easier.
+## 4. Deliver A: a usable judgment or requested artifact
 
-Separate the comparison supported by available evidence from your recommendation based on stated priorities and assumptions. Give a conditional preference when justified, with reasons and what evidence or priority would reverse it. If there is no defensible ranking, say so; explain the conditions favoring each path and recommend a next step rather than inventing a winner. If a factual unknown dominates, propose the smallest feasible check that distinguishes the routes within the user's constraints. State what would be observed and how different results change the choice; lowest monetary cost alone is not the criterion. If the remaining difference is a value tradeoff, leave it to the user. Do not claim an objectively best choice independent of those priorities or promise certainty from an imagined "all-seeing" perspective.
+Give an initial judgment the user can act on. Explain a conditional preference when evidence and stated priorities justify it, including what would reverse it. Without a defensible ranking, state the conditions favoring each route and recommend an informative next step. Do not fill missing priorities with your own values.
 
-Aim for one short screen: a working understanding and core decision, useful perspectives, their material support and tradeoffs, and a justified recommendation or informative next step. The user should understand what the current view leaves out and why another route may still have value. If a plan, draft, or other artifact was requested, include a usable scoped version now when possible; do not substitute the analysis template or postpone delivery to B. Follow the user's format and length requirements, integrating the check into the result without mandatory A/B labels. Scale detail to the task and explicit user requests; do not fill a length quota.
+When a factual unknown dominates, propose the smallest feasible check that distinguishes the routes within the user's constraints: what to observe and which result changes which action. Lowest monetary cost alone is not the criterion. Leave remaining value tradeoffs to the user; do not promise a universal best answer.
 
-## 5. Deepen B according to the user's choice
+Aim for one short screen containing the useful understanding, perspectives, support, tradeoffs, and recommendation or next action. Use a table only if it helps. Follow the user's requested format and depth; A/B labels are not required.
 
-When further work would help, offer at most two or three concrete paths derived from A, such as checking a pivotal assumption, comparing two routes, or simulating a selected pilot. Include the option to stop, correct the framing, or name another path. A short combined choice suffices; avoid a large menu or repeated confirmation.
+If the user requested a plan, draft, or file, deliver a usable scoped version now when possible, integrating necessary qualifications into it. Do not postpone an authorized deliverable until B. For an artifact, make one brief completion check against the requested outcome, constraints, and format, and repair evident gaps without expanding analysis. Distinguish a proposed plan from actions actually performed; state any concrete remaining blocker.
 
-User selection authorizes analysis of that path within existing permissions. It is not authorization to publish, contact others, buy, or change unrelated settings. If the user already asked to continue within a stated scope, proceed without asking again. Reopen alignment only when new information materially changes that scope or invalidates a key premise.
+## 5. Deepen B by choice, then stop
 
-Stop when the requested deliverable is ready, another angle would not change action, the remaining difference is a user value choice, or useful evidence must be obtained. Say what remains uncertain and the next informative action. Do not demand that every uncertainty be resolved. Completion is a usable judgment or the requested artifact, not the number of questions, perspectives, or branches produced.
+When useful, offer two or three concrete continuations derived from A: check a premise, compare routes, or simulate a selected pilot. The user can stop, correct the understanding, or name another path. If deeper work is already requested, proceed within that scope without another confirmation.
+
+Default to one selected branch. Explicit requests for wider coverage can change the default bounds; follow the approved scope and any stricter budget. Preserve existing authorization, but analysis selection does not authorize publishing, contacting others, buying, or unrelated settings changes.
+
+Carry the agreed context forward. Correct only conclusions affected by new information; replace an invalidated perspective instead of retaining every historical branch. Reopen the choice only when the change matters. A preference chooses priorities, not disputed facts. Revise your recommendation when its premise changes.
+
+Stop when the requested result is ready, another angle would not change action, the remaining difference is a user value choice, or new evidence is needed. State the remaining uncertainty and informative next action where useful. Completion is a usable judgment or artifact, not a count of questions or perspectives.
 
 ## Effort boundaries
 
-Use one initial perspective check, at most three initial questions and three live perspectives. Skip clarification when the relevant background is already sufficient. Deepen one chosen branch at a time. No automatic search, multi-agent council, exhaustive stakeholder list, or repeated self-debate solely to perform this workflow. Use sources/tools when pivotal facts require them or the selected task calls for them; follow applicable domain requirements.
+Keep the initial check bounded and load deeper guidance only for the chosen work. Do not automatically search, call agents, enumerate stakeholders, or repeat self-debate merely to perform this workflow. Use tools and sources when pivotal facts or the selected task require them; follow applicable domain requirements.
 
-These are behavioral effort controls, not a hard token limit. Actual reasoning and usage are controlled by the host/model. Respect an explicit user budget and stop at its boundary rather than claiming a guaranteed saving.
+These are behavioral and reading-cost controls, not a hard token limit. Actual reasoning and usage depend on the host/model. Respect an explicit budget; do not claim guaranteed savings.
 
-**Example:** "We need an app to improve shop revenue" separates revenue improvement from an app as the proposed means. If the bottleneck is unknown, ask one pivotal question or compare conditional cases. Explain how acquisition versus repeat purchase would change the first action. Preserve the app route's possible value; do not assume a different bottleneck is true. If asked for a plan, deliver a scoped conditional plan rather than only offering to analyze later.
+**Example:** "Build an app to improve shop revenue" provides a goal and a proposed means. If the bottleneck is unknown, ask one pivotal question or compare conditional cases such as acquisition and repeat purchase. Explain their different first actions and the app route's possible benefit; assume neither cause is established. If asked for a plan, provide a scoped conditional plan.

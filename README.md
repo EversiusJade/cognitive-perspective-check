@@ -15,15 +15,15 @@
 - **建议有依据，也可修正。** 同时检查用户和 AI 的假设，区分事实、推断和价值偏好；说明建议偏向、成立条件与改变建议的依据。
 - **深入由用户决定。** 首轮给出有限但可用的判断，随后只验证、比较或推演所选分支，让用户控制分析方向和阅读成本。
 
-> 当前版本：`0.2.0-rc.3`，为交付与判断边界修订候选版。本轮进行了独立静态审查，未新增模型行为实验。[本轮内容审查](docs/reviews/v0.2.0-rc.3-content-review.md) 记录修订依据；[已有验证记录](evals/validation.md) 仅对应 `0.2.0-rc.1`，不能证明本版效果。
+> 当前版本：`0.2.0-rc.4`，为入口精简与使用边界修订候选版。[本轮使用走查](docs/reviews/v0.2.0-rc.4-use-review.md) 记录静态修订依据，未新增模型行为实验。[已有验证记录](evals/validation.md) 仅对应 `0.2.0-rc.1`，不能证明本版效果。
 
 ## 安装与首次使用
 
-候选版 `v0.2.0-rc.3` 下载入口：
+候选版 `v0.2.0-rc.4` 下载入口：
 
-- [Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.3/cognitive-perspective-check-v0.2.0-rc.3-windows.zip)
-- [纯 Skill 包：手动安装](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.3/cognitive-perspective-check.zip)
-- [版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.3)
+- [Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check-v0.2.0-rc.4-windows.zip)
+- [纯 Skill 包：手动安装](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check.zip)
+- [版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.4)
 
 也可下载 [完整仓库源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)。完整解压后，打开包含 `README.md` 和安装入口的文件夹。
 
@@ -52,7 +52,7 @@ npx skills add EversiusJade/cognitive-perspective-check --skill cognitive-perspe
 3. **对照少量有实际差别的视角。** 通常保留当前视角与一个替代视角，说明各自的证据、收益、代价，以及第一步或成功标准会怎样改变。
 4. **解释有条件的后果。** 必要时用有限的假设或情景说明：关键条件成立或不成立，会怎样影响选择。推演用于理解后果和找出待查事实；情景合理不等于现实中会发生。
 5. **形成选择与条件建议。** 根据现有证据比较选项；AI 说明自己在什么优先级和假设下偏向哪条路线，以及什么信息会改变这项建议。
-6. **由用户选择继续的分支。** 用户可以验证关键假设、比较路线、推演一个试点、纠正理解或停止。深入时只处理已选分支。
+6. **由用户选择继续的范围。** 用户可以验证关键假设、比较路线、推演一个试点、纠正理解或停止。默认只深入一个分支；用户明确要求组合或更广覆盖时，遵守已选范围和预算。
 
 第一轮交付称为 **A：有限判断与选择**；用户选择后的继续工作称为 **B：所选分支的深入**。A 应提供可用判断，不停留在提问。简短的条件后果可直接支持 A；完整情景推演只在任务需要或用户选择时展开。A/B 是文档中的流程标记，实际回答按用户所需格式呈现。
 
@@ -62,7 +62,9 @@ npx skills add EversiusJade/cognitive-perspective-check --skill cognitive-perspe
 - **已要求具体成果：**尽可能当轮给出可用的方案、文案或计划，将必要的视角检查融入成果。用户选择继续后，直接制作所选范围内的成果；交接摘要仅用于确实需要转交时。
 - **所选深入：**验证分支交付观察与判断更新，或可执行的检查和结果分支；路线比较交付影响选择的取舍；推演交付条件后果、失败信号与待查事实。
 
-比较始终服务用户已明确的目标与约束。改变目标或优先级要作为提议说明，不能由 AI 暗中替换。流程完成看用户能否理解取舍、作出下一步选择或使用成果，不看列了多少问题和视角。
+比较始终服务用户已明确的目标与约束。改变目标或优先级要作为提议说明，不能由 AI 暗中替换。少量视角是按当前背景选择的有限覆盖，不代表穷尽；只有可能改变建议的遗漏才需提醒。新背景使旧视角失效时，修正或替换相关部分。交付成果前按目标、约束和格式做一次简短检查，并区分提出的动作与已经完成的工作。
+
+流程完成看用户能否理解取舍、作出下一步选择或使用成果，不看列了多少问题和视角。
 
 例如，“给小店做 App 提高收入”已经给出目标与一种手段。若关键瓶颈未知，skill 可以先补问最影响选择的信息，或明确假设后比较拉新与复购两种理解。两者可能改变投入方向，也可能保留 App 的价值。AI 应说明证据和适用条件，由用户选择后续验证或试点。
 
@@ -72,8 +74,8 @@ npx skills add EversiusJade/cognitive-perspective-check --skill cognitive-perspe
 
 - 适用于早期项目构思、设计方向和未定决策；背景清楚时，仍可检查会实质改变判断的视角差异。
 - 通常不提问或只问一个；初始对齐累计最多三个关键问题，不按每轮重新计算，也不把长问卷算作一问。达到限额仍缺信息时，收窄结论并说明限制。
-- 通常比较两个视角，总计最多三个；维度随问题选择，不套用通用清单，也不制造对立。
-- 第一轮进行一次有限检查，优先保持一短屏可读；之后只深入用户选中的一个 B 分支。
+- 默认通常比较两个视角，总计最多三个；维度随问题选择，不套用通用清单，也不制造对立。
+- 第一轮进行一次有限检查，优先保持一短屏可读；之后默认只深入用户选中的一个 B 分支。明确要求更广分析时，依照已授权范围和预算展开。
 - 明确的事实问题和已确定的执行任务直接完成；存在实质不匹配时才作简短提醒。
 - 不因运行本流程而自动搜索、组织多代理讨论或反复自我辩论；关键事实或用户选定任务需要时再使用工具。
 
@@ -108,9 +110,9 @@ LICENSE                    MIT
 
 ## 反馈
 
-通过 [GitHub Issues](https://github.com/EversiusJade/cognitive-perspective-check/issues) 提交反馈。
+通过 [使用反馈模板](https://github.com/EversiusJade/cognitive-perspective-check/issues/new?template=usage-feedback.md) 提交实际案例，或直接打开 [GitHub Issues](https://github.com/EversiusJade/cognitive-perspective-check/issues)。最少提供原问题、AI 回答及哪里有帮助或阻碍，其余内容可留空。
 
-反馈请附原始需求、相关上下文、客户端/模型、版本、是否明确调用、实际回答和希望改变的行为。特别欢迎报告理解偏差、反复确认、擅自改目标、视角没有实际差别、把推演当作证据，以及用户选择后仍展开其他分支。不要提交敏感信息。
+方便时可补充相关上下文、客户端/模型、版本、是否明确调用和希望改变的行为。特别欢迎报告理解偏差、反复确认、擅自改目标、视角没有实际差别、把推演当作证据，以及用户选择后仍展开其他分支。不要提交敏感信息。
 
 ## 许可
 

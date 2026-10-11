@@ -1,8 +1,8 @@
 # 安装、更新与首次验证
 
-本说明适用于 **认知视角检查器 · Cognitive Perspective Check**，稳定安装标识为 `cognitive-perspective-check`。当前候选版本为 `0.2.0-rc.3`。
+本说明适用于 **认知视角检查器 · Cognitive Perspective Check**，稳定安装标识为 `cognitive-perspective-check`。当前候选版本为 `0.2.0-rc.4`。
 
-下载入口：[Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.3/cognitive-perspective-check-v0.2.0-rc.3-windows.zip)、[纯 Skill 包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.3/cognitive-perspective-check.zip)、[版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.3)。
+下载入口：[Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check-v0.2.0-rc.4-windows.zip)、[纯 Skill 包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check.zip)、[版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.4)。
 
 ## Windows：解压后双击
 
@@ -74,9 +74,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target Copilo
 
 ## GitHub 发布后的在线安装
 
-公开仓库：[EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)。当前候选版本的发布入口为 [v0.2.0-rc.3 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.3)。也可下载 [源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)，完整解压后进入包含 `README.md` 和安装入口的文件夹，按本文的双击或手动复制步骤安装。下载 ZIP 和手动复制不依赖 GitHub CLI；在线技能安装命令需另行在目标工具验证。
+公开仓库：[EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)。当前候选版本的发布入口为 [v0.2.0-rc.4 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.4)。也可下载 [源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)，完整解压后进入包含 `README.md` 和安装入口的文件夹，按本文的双击或手动复制步骤安装。下载 ZIP 和手动复制不依赖 GitHub CLI；在线技能安装命令需另行在目标工具验证。
 
-`0.2.0-rc.3` 沿用原安装程序，本轮仅进行内容与分发静态审查。[已有安装和行为验证记录](https://github.com/EversiusJade/cognitive-perspective-check/blob/v0.2.0-rc.1/evals/validation.md) 对应已发布的 `0.2.0-rc.1`，不代表本版已在实际客户端验证自然调用或效果。
+`0.2.0-rc.4` 沿用原安装程序，本轮仅进行内容与分发静态审查。[已有安装和行为验证记录](https://github.com/EversiusJade/cognitive-perspective-check/blob/v0.2.0-rc.1/evals/validation.md) 对应已发布的 `0.2.0-rc.1`，不代表本版已在实际客户端验证自然调用或效果。
 
 ## 维护者检查
 

@@ -1,6 +1,6 @@
 # Deepen only the selected scope
 
-Read this only after the user selects or explicitly requests deeper work. Continue from the background, core decision, competing perspectives, and conditional judgment already established. Choose the relevant branch; do not run all branches. Briefly state the selected question, assumptions, coverage, and the stopping point. Existing authorization persists; do not re-ask permission for the same analysis.
+Read this only after the user selects or explicitly requests deeper work. Continue from the established background, core decision, perspectives, and judgment. Choose the relevant branch; do not run all branches by default. Honor an explicit request for combined or wider coverage within the approved scope and budget. Briefly state assumptions, coverage, and the stopping point. Existing authorization persists; do not re-ask permission for the same analysis.
 
 ## Evidence check
 
@@ -23,7 +23,7 @@ Use qualitative consequences unless inputs justify numbers. Do not invent market
 
 ## Produce the selected deliverable
 
-Use when the user asks to start acting, write a plan, draft content, or produce an artifact for the selected path. Complete that requested output within existing tools and authorization; do not stop at a specification card when you can deliver it. Carry the chosen outcome, success criterion, constraints, pivotal unknown, first action, and revision condition into the output only where useful. Give a compact handoff only when the task actually goes to another actor/tool or requires unavailable information or permission, explaining what remains. Keep the result proportional; do not regenerate discarded branches. Follow the selected task's applicable skills and requirements.
+Use when the user asks to start acting, write a plan, draft content, or produce an artifact for the selected path. Complete that requested output within existing tools and authorization; do not stop at a specification card when you can deliver it. Carry the chosen outcome, success criterion, constraints, pivotal unknown, first action, and revision condition into the output only where useful. Check once that the result answers the chosen task in its requested format, then repair evident omissions without reopening analysis. Separate proposed actions from work actually performed. Give a compact handoff only when the task goes to another actor/tool or requires unavailable information or permission, explaining what remains. Keep the result proportional; do not regenerate discarded branches. Follow the selected task's applicable skills and requirements.
 
 ## New information
 
