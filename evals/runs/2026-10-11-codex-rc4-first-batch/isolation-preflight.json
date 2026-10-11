@@ -1,0 +1,780 @@
+{
+  "collected_at": "2026-10-11T09:51:26.804955+00:00",
+  "purpose": "app_server_isolation_preflight_no_model_turn",
+  "persistent_config_written": false,
+  "credentials_copied": false,
+  "records": [
+    {
+      "target_enabled": false,
+      "model_turns": 0,
+      "status": "completed",
+      "effective_controls": {
+        "web_search": "disabled",
+        "default_permissions": "cpc_eval",
+        "windows": {
+          "sandbox": "mxc"
+        },
+        "features": {
+          "apps": false,
+          "plugins": false,
+          "multi_agent": false,
+          "browser_use": false,
+          "browser_use_external": false,
+          "computer_use": false
+        },
+        "mcp_servers": {
+          "node_repl": {
+            "enabled": false
+          }
+        },
+        "plugins": {
+          "visualize@openai-bundled": {
+            "enabled": false
+          },
+          "pdf@openai-primary-runtime": {
+            "enabled": false
+          },
+          "documents@openai-primary-runtime": {
+            "enabled": false
+          },
+          "presentations@openai-primary-runtime": {
+            "enabled": false
+          },
+          "unified-computer-use@openai-bundled": {
+            "enabled": false
+          },
+          "spreadsheets@openai-primary-runtime": {
+            "enabled": false
+          },
+          "code-review@openai-bundled": {
+            "enabled": false
+          },
+          "chrome@openai-bundled": {
+            "enabled": false
+          },
+          "codex-app-tools@openai-bundled": {
+            "enabled": false
+          },
+          "template-creator@openai-primary-runtime": {
+            "enabled": false
+          },
+          "computer-use@openai-bundled": {
+            "enabled": false
+          },
+          "browser@openai-bundled": {
+            "enabled": false
+          }
+        }
+      },
+      "skills": [
+        {
+          "name": "academy-guide",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "algorithmic-art",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "benchmark-paper-template",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "brainstorming",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "brand-guidelines",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "canvas-design",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "caveman",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "claude-api",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "cognitive-perspective-check",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "deep-research",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "discernment-nudge",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "dispatching-parallel-agents",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "doc-coauthoring",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "docx",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "drawio-reconstruction",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "executing-plans",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "figure-designer",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "finishing-a-development-branch",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "frontend-design",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "idea-evaluator",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "internal-comms",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "intro-drafter",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "mcp-builder",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "paper-polish",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "paper-writer",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "pdf",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail-audit",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail-debt",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail-gain",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail-help",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail-review",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "pptx",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "pre-submission-reviewer",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "rebuttal-guidance",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "receiving-code-review",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "requesting-code-review",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "skill-creator",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "slack-gif-creator",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "subagent-driven-development",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "systematic-debugging",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "tech-paper-template",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "test-driven-development",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "theme-factory",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "using-git-worktrees",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "using-superpowers",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "verification-before-completion",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "vibe-research-workflow",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "web-artifacts-builder",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "webapp-testing",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "writing-plans",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "writing-skills",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "xlsx",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "imagegen",
+          "enabled": true,
+          "scope": "system"
+        },
+        {
+          "name": "openai-docs",
+          "enabled": true,
+          "scope": "system"
+        },
+        {
+          "name": "review-agent",
+          "enabled": true,
+          "scope": "system"
+        },
+        {
+          "name": "skill-creator",
+          "enabled": true,
+          "scope": "system"
+        },
+        {
+          "name": "skill-installer",
+          "enabled": true,
+          "scope": "system"
+        }
+      ],
+      "thread_metadata": {
+        "model": "gpt-6-luna",
+        "modelProvider": "openai",
+        "serviceTier": null,
+        "disabledPluginIds": [],
+        "cwd": "D:\\Codex\\2026-10-10\\new-chat\\work\\codex-pilot-empty",
+        "runtimeWorkspaceRoots": [
+          "D:\\Codex\\2026-10-10\\new-chat\\work\\codex-pilot-empty"
+        ],
+        "instructionSources": [],
+        "approvalPolicy": "never",
+        "approvalsReviewer": "user",
+        "sandbox": {
+          "type": "readOnly",
+          "networkAccess": false
+        },
+        "activePermissionProfile": {
+          "id": "cpc_eval",
+          "extends": null
+        },
+        "reasoningEffort": "medium",
+        "multiAgentMode": "explicitRequestOnly"
+      },
+      "thread_id": "01a12a5f-c957-7913-8f67-52787fa0f117",
+      "instruction_sources": [],
+      "command_probe": {
+        "exitCode": 0,
+        "stdout": "cwd=allowed\r\ntarget=denied\r\nsource_copy=denied\r\nnetwork=blocked_or_unavailable\r\n",
+        "stderr": ""
+      },
+      "stderr_tail": ""
+    },
+    {
+      "target_enabled": true,
+      "model_turns": 0,
+      "status": "completed",
+      "effective_controls": {
+        "web_search": "disabled",
+        "default_permissions": "cpc_eval",
+        "windows": {
+          "sandbox": "mxc"
+        },
+        "features": {
+          "apps": false,
+          "plugins": false,
+          "multi_agent": false,
+          "browser_use": false,
+          "browser_use_external": false,
+          "computer_use": false
+        },
+        "mcp_servers": {
+          "node_repl": {
+            "enabled": false
+          }
+        },
+        "plugins": {
+          "computer-use@openai-bundled": {
+            "enabled": false
+          },
+          "pdf@openai-primary-runtime": {
+            "enabled": false
+          },
+          "browser@openai-bundled": {
+            "enabled": false
+          },
+          "unified-computer-use@openai-bundled": {
+            "enabled": false
+          },
+          "template-creator@openai-primary-runtime": {
+            "enabled": false
+          },
+          "codex-app-tools@openai-bundled": {
+            "enabled": false
+          },
+          "code-review@openai-bundled": {
+            "enabled": false
+          },
+          "spreadsheets@openai-primary-runtime": {
+            "enabled": false
+          },
+          "documents@openai-primary-runtime": {
+            "enabled": false
+          },
+          "presentations@openai-primary-runtime": {
+            "enabled": false
+          },
+          "visualize@openai-bundled": {
+            "enabled": false
+          },
+          "chrome@openai-bundled": {
+            "enabled": false
+          }
+        }
+      },
+      "skills": [
+        {
+          "name": "academy-guide",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "algorithmic-art",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "benchmark-paper-template",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "brainstorming",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "brand-guidelines",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "canvas-design",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "caveman",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "claude-api",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "cognitive-perspective-check",
+          "enabled": true,
+          "scope": "user"
+        },
+        {
+          "name": "deep-research",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "discernment-nudge",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "dispatching-parallel-agents",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "doc-coauthoring",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "docx",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "drawio-reconstruction",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "executing-plans",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "figure-designer",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "finishing-a-development-branch",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "frontend-design",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "idea-evaluator",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "internal-comms",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "intro-drafter",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "mcp-builder",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "paper-polish",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "paper-writer",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "pdf",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail-audit",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail-debt",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail-gain",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail-help",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "ponytail-review",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "pptx",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "pre-submission-reviewer",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "rebuttal-guidance",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "receiving-code-review",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "requesting-code-review",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "skill-creator",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "slack-gif-creator",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "subagent-driven-development",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "systematic-debugging",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "tech-paper-template",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "test-driven-development",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "theme-factory",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "using-git-worktrees",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "using-superpowers",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "verification-before-completion",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "vibe-research-workflow",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "web-artifacts-builder",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "webapp-testing",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "writing-plans",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "writing-skills",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "xlsx",
+          "enabled": false,
+          "scope": "user"
+        },
+        {
+          "name": "imagegen",
+          "enabled": true,
+          "scope": "system"
+        },
+        {
+          "name": "openai-docs",
+          "enabled": true,
+          "scope": "system"
+        },
+        {
+          "name": "review-agent",
+          "enabled": true,
+          "scope": "system"
+        },
+        {
+          "name": "skill-creator",
+          "enabled": true,
+          "scope": "system"
+        },
+        {
+          "name": "skill-installer",
+          "enabled": true,
+          "scope": "system"
+        }
+      ],
+      "thread_metadata": {
+        "model": "gpt-6-luna",
+        "modelProvider": "openai",
+        "serviceTier": null,
+        "disabledPluginIds": [],
+        "cwd": "D:\\Codex\\2026-10-10\\new-chat\\work\\codex-pilot-empty",
+        "runtimeWorkspaceRoots": [
+          "D:\\Codex\\2026-10-10\\new-chat\\work\\codex-pilot-empty"
+        ],
+        "instructionSources": [],
+        "approvalPolicy": "never",
+        "approvalsReviewer": "user",
+        "sandbox": {
+          "type": "readOnly",
+          "networkAccess": false
+        },
+        "activePermissionProfile": {
+          "id": "cpc_eval",
+          "extends": null
+        },
+        "reasoningEffort": "medium",
+        "multiAgentMode": "explicitRequestOnly"
+      },
+      "thread_id": "01a12a5f-d163-7d01-b7cd-d6ac01745969",
+      "instruction_sources": [],
+      "command_probe": {
+        "exitCode": 0,
+        "stdout": "cwd=allowed\r\ntarget=allowed\r\nsource_copy=denied\r\nnetwork=blocked_or_unavailable\r\n",
+        "stderr": ""
+      },
+      "stderr_tail": ""
+    }
+  ]
+}

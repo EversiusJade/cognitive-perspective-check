@@ -1,0 +1,52 @@
+{
+  "collected_at": "2026-10-11T09:36:11.720603+00:00",
+  "client": "codex-cli 0.162.0-alpha.17.2",
+  "method": "app-server initialize + skills/list; per-process skills.config override",
+  "purpose": "discovery_preflight_only_not_model_evaluation",
+  "model_turns": 0,
+  "persistent_config_written": false,
+  "credentials_copied": false,
+  "target_skill_sha256": "7bf128968bea32a5d05686f694bf5e0cb5336e20107a25868198c92575f4653a",
+  "other_inventory_equal": true,
+  "limits": [
+    "Enabled state is discovery evidence, not proof of loading, compliance, or effect.",
+    "Disabling discovery does not prove the model cannot read the installed file through tools; stronger C0/Cs filesystem isolation is still required.",
+    "No model turn, experimental slot, human rating, or usage measurement was collected."
+  ],
+  "conditions": {
+    "disabled": {
+      "maps_to": [
+        "C0",
+        "Cs"
+      ],
+      "status": "received",
+      "requested_target_enabled": false,
+      "target_entries": [
+        {
+          "name": "cognitive-perspective-check",
+          "enabled": false
+        }
+      ],
+      "discovery_error_count": 0,
+      "other_inventory_count": 65,
+      "other_inventory_sha256": "af2a96a381ce8b941e978992b2e1a7cd7b8b1ff53a7c71ffa7800c8717ab48bc"
+    },
+    "enabled": {
+      "maps_to": [
+        "C1",
+        "C2"
+      ],
+      "status": "received",
+      "requested_target_enabled": true,
+      "target_entries": [
+        {
+          "name": "cognitive-perspective-check",
+          "enabled": true
+        }
+      ],
+      "discovery_error_count": 0,
+      "other_inventory_count": 65,
+      "other_inventory_sha256": "af2a96a381ce8b941e978992b2e1a7cd7b8b1ff53a7c71ffa7800c8717ab48bc"
+    }
+  }
+}

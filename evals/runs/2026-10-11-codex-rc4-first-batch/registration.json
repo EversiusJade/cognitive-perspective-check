@@ -1,0 +1,448 @@
+{
+  "status": "partial_engineering_batch_registered_before_collection",
+  "registered_at": "2026-10-11T09:53:25.342821+00:00",
+  "client": "codex-cli 0.162.0-alpha.17.2 App Server",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "medium",
+  "model_alias_resolution": "unknown",
+  "client_choice": "user_selected_Codex",
+  "user_time_budget_minutes": 30,
+  "budget_start_utc": "2026-10-11T09:43:29Z",
+  "deadline_utc": "2026-10-11T10:13:29Z",
+  "concurrency": 4,
+  "per_turn_timeout_seconds": 180,
+  "cash_cost": "unknown_ChatGPT_auth",
+  "full_pilot_planned_slots": 48,
+  "this_batch_planned_slots": 8,
+  "selection_rule": "Before outputs: first repetition of two native single-message, single-turn pilot scenes, all four conditions; random order seed 20261011.",
+  "selected_order": [
+    {
+      "slot_id": "s2-Cs-r1",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "Cs",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-Cs-r1",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "Cs",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C0-r1",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C0",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C0-r1",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C0",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C1-r1",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C1",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C2-r1",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C2",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C1-r1",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C1",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C2-r1",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C2",
+      "repeat": 1,
+      "attempt": 1
+    }
+  ],
+  "all_planned_slots": [
+    {
+      "slot_id": "s1-C0-r1",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "C0",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s1-Cs-r1",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "Cs",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s1-C1-r1",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "C1",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s1-C2-r1",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "C2",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s1-C0-r2",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "C0",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s1-Cs-r2",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "Cs",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s1-C1-r2",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "C1",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s1-C2-r2",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "C2",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s1-C0-r3",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "C0",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s1-Cs-r3",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "Cs",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s1-C1-r3",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "C1",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s1-C2-r3",
+      "scenario_id": "messy-context-reconstruction",
+      "condition": "C2",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C0-r1",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C0",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-Cs-r1",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "Cs",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C1-r1",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C1",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C2-r1",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C2",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C0-r2",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C0",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-Cs-r2",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "Cs",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C1-r2",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C1",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C2-r2",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C2",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C0-r3",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C0",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-Cs-r3",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "Cs",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C1-r3",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C1",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s2-C2-r3",
+      "scenario_id": "fixed-deliverable-causal-preset",
+      "condition": "C2",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-C0-r1",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "C0",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-Cs-r1",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "Cs",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-C1-r1",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "C1",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-C2-r1",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "C2",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-C0-r2",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "C0",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-Cs-r2",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "Cs",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-C1-r2",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "C1",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-C2-r2",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "C2",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-C0-r3",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "C0",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-Cs-r3",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "Cs",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-C1-r3",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "C1",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s3-C2-r3",
+      "scenario_id": "chosen-pilot-simulation",
+      "condition": "C2",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C0-r1",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C0",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-Cs-r1",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "Cs",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C1-r1",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C1",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C2-r1",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C2",
+      "repeat": 1,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C0-r2",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C0",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-Cs-r2",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "Cs",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C1-r2",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C1",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C2-r2",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C2",
+      "repeat": 2,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C0-r3",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C0",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-Cs-r3",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "Cs",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C1-r3",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C1",
+      "repeat": 3,
+      "attempt": 1
+    },
+    {
+      "slot_id": "s4-C2-r3",
+      "scenario_id": "plain-chat-no-calibration",
+      "condition": "C2",
+      "repeat": 3,
+      "attempt": 1
+    }
+  ],
+  "frozen_hashes": {
+    "inputs.json": "9c1a11e3aa4c14a9120c7448a5aea906b929b8944992248d91984b4d84c2beb1",
+    "rubric.json": "7d90fda73a44d4ffb07862f397b7e8024f024629a21ea09d069f8f2517c45ea9",
+    "experiment-design.md": "f682bddafdf27dbd73b8818aa45dfbe49663fb917c335180f4986a4adcc400d3"
+  },
+  "runner_hashes": {
+    "codex_pilot_collect.py": "2e3572833f63e48349f519ab5e5a821620b72b3cec11945521eb5ff2d1c34138",
+    "codex_eval_isolation.py": "c18dcbaa7fd8a8042b0847ee010c74a2ab69716840b2584589fdfd2cd0136869",
+    "run_codex_first_batch.py": "f8e2bf3152ebc1f8d2c26eca1fe0d72c1cb7bca68d379abb84604501b6001961"
+  },
+  "target_skill_sha256": "7bf128968bea32a5d05686f694bf5e0cb5336e20107a25868198c92575f4653a",
+  "target_version": "0.2.0-rc.4",
+  "source_revision": "c8bf69d4696523bf93a573745ebeb39afcf83b89",
+  "system_and_other_skills": "Five bundled system skills enabled in both groups; all 65 other observed user/plugin entries disabled except target in C1/C2.",
+  "tools": "Sandboxed native commands; readonly roots; MXC; approval never; web/apps/plugins/MCP/browser/multiagent disabled in both groups.",
+  "instruction_sources": [],
+  "native_isolation_preflight": "isolation-preflight.json",
+  "human_review_status": "pending_not_scored",
+  "reviewers": [
+    {
+      "role": "author_human",
+      "identity": "not_assigned"
+    },
+    {
+      "role": "independent_non_author_human",
+      "identity": "not_assigned"
+    }
+  ],
+  "deviations_from_full_protocol": [
+    "Reviewer identities and calibration have not been assigned/completed; this is partial engineering collection, not the full preregistered human evaluation.",
+    "Open multi-turn controller and fixed assistant-history fixtures are not collected by this bounded runner; no prompt/history substitution.",
+    "Only one repeat for each of two scenes; no primary exploratory perspective metric or inferential gain estimate is supported."
+  ],
+  "retry_policy": "No behavior retry. Technical attempts retained; this first batch does not automatically retry."
+}

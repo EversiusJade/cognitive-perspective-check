@@ -42,6 +42,16 @@ Codex 或共用目录将 `.copilot/skills` 换成 `.agents/skills`。这些命�
 
 目录依据：[GitHub 官方技能说明](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills)、[OpenAI 官方技能说明](https://learn.chatgpt.com/docs/build-skills)。核对日期：2026-10-11。
 
+## Claude 与 Cursor：原生 Skills
+
+核心文件可沿用同一份 `skills/cognitive-perspective-check/`：
+
+- **Claude Code：**复制完整文件夹到个人 `~/.claude/skills/` 或项目 `.claude/skills/`，最终为 `cognitive-perspective-check/SKILL.md`。
+- **Claude 网页 / 桌面：**在可用的 Skills 设置中上传 [纯 Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check.zip) 并启用；按客户端要求启用代码执行与文件创建。
+- **Cursor：**复制到项目 `.cursor/skills/` 或 `.agents/skills/`；个人目录可用 `~/.cursor/skills/` 或 `~/.agents/skills/`，选一个位置。
+
+这些路线依据官方原生机制提供，尚未在本项目中逐客户端实测；本地目录不会自动同步到云端。完整步骤、官方来源、首次检查及验证状态见 [客户端兼容指南](docs/client-compatibility.md)。
+
 ## 首次验证：先点名，再看自然触发
 
 新建一轮聊天。必要时重启客户端使它重新发现本地技能。

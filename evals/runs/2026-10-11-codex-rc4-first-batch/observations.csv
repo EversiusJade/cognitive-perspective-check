@@ -1,0 +1,9 @@
+scenario,condition,repeat,status,final_unicode_characters,commentary_messages,tool_calls,failed_tool_calls,body_load_status,wall_seconds_including_retries,input_tokens,cached_input_tokens_subset,output_tokens,reasoning_output_tokens_subset,total_tokens,human_rating
+fixed-deliverable-causal-preset,C0,1,completed,37,0,0,0,unknown,114.453,11011,1792,30,0,11041,pending
+fixed-deliverable-causal-preset,C1,1,completed,37,0,0,0,unknown,114.516,11087,1792,32,0,11119,pending
+fixed-deliverable-causal-preset,C2,1,completed,62,1,3,2,observed_loaded,126.953,46835,41984,437,173,47272,pending
+fixed-deliverable-causal-preset,Cs,1,completed,36,0,0,0,unknown,115.719,11077,1792,29,0,11106,pending
+plain-chat-no-calibration,C0,1,completed,12,0,0,0,unknown,114.422,10958,1792,14,0,10972,pending
+plain-chat-no-calibration,C1,1,completed,12,0,0,0,unknown,114.906,11034,1792,14,0,11048,pending
+plain-chat-no-calibration,C2,1,completed,13,1,0,0,unknown,115.782,11040,1792,48,0,11088,pending
+plain-chat-no-calibration,Cs,1,completed,12,0,0,0,unknown,114.422,11024,4864,14,0,11038,pending
