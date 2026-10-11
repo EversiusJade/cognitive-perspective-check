@@ -7,7 +7,7 @@ on:
     paths:
       - '.github/workflows/publish-release.yml'
       - 'scripts/package_release.py'
-      - 'docs/releases/v0.2.0-rc.1.md'
+      - 'docs/releases/v0.2.0-rc.2.md'
 
 permissions:
   contents: write
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      RELEASE_TAG: v0.2.0-rc.1
+      RELEASE_TAG: v0.2.0-rc.2
     steps:
       - name: Fetch the exact source commit
         run: |
@@ -47,7 +47,7 @@ jobs:
               exit 0
             fi
             gh release upload "${RELEASE_TAG}" "${assets[@]}" --repo "${GITHUB_REPOSITORY}" --clobber
-            gh release edit "${RELEASE_TAG}" --repo "${GITHUB_REPOSITORY}" --target "${GITHUB_SHA}" --draft=false --prerelease --latest=false --title "问题框架校准器 ${RELEASE_TAG}" --notes-file "source/docs/releases/${RELEASE_TAG}.md"
+            gh release edit "${RELEASE_TAG}" --repo "${GITHUB_REPOSITORY}" --target "${GITHUB_SHA}" --draft=false --prerelease --latest=false --title "认知视角检查器 ${RELEASE_TAG}" --notes-file "source/docs/releases/${RELEASE_TAG}.md"
           else
-            gh release create "${RELEASE_TAG}" "${assets[@]}" --repo "${GITHUB_REPOSITORY}" --target "${GITHUB_SHA}" --prerelease --latest=false --title "问题框架校准器 ${RELEASE_TAG}" --notes-file "source/docs/releases/${RELEASE_TAG}.md"
+            gh release create "${RELEASE_TAG}" "${assets[@]}" --repo "${GITHUB_REPOSITORY}" --target "${GITHUB_SHA}" --prerelease --latest=false --title "认知视角检查器 ${RELEASE_TAG}" --notes-file "source/docs/releases/${RELEASE_TAG}.md"
           fi

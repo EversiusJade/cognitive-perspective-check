@@ -1,6 +1,6 @@
 interface:
-  display_name: "问题框架校准器"
-  short_description: "提炼模糊的早期需求，少量补问，解释换一种理解会怎样改变方案"
-  default_prompt: "使用 $cognitive-perspective-check 帮我梳理这个早期需求，给出简短的框架比较和有条件的建议。"
+  display_name: "认知视角检查器"
+  short_description: "理解关键背景，检验用户与 AI 预设，对照少量视角并给出有依据的条件建议"
+  default_prompt: "使用 $cognitive-perspective-check 理解这个早期项目或决策的关键背景，比较会改变行动的视角，给出有依据的条件建议，再由我选择继续的分支。"
 policy:
   allow_implicit_invocation: true

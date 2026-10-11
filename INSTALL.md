@@ -1,5 +1,9 @@
 # 安装、更新与首次验证
 
+本说明适用于 **认知视角检查器 · Cognitive Perspective Check**，稳定安装标识为 `cognitive-perspective-check`。当前候选版本为 `0.2.0-rc.2`。
+
+下载入口：[Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.2/cognitive-perspective-check-v0.2.0-rc.2-windows.zip)、[纯 Skill 包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.2/cognitive-perspective-check.zip)、[版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.2)。
+
 ## Windows：解压后双击
 
 完整安装包的根目录有两个入口，按用途选一个：
@@ -44,11 +48,11 @@ Codex 或共用目录将 `.copilot/skills` 换成 `.agents/skills`。这些命�
 
 先输入：
 
-> 使用 cognitive-perspective-check。我们想做一个 App 帮小店提高收入，但还没有确定瓶颈。不要展开完整开发计划，先帮我判断问题方向。
+> 使用 cognitive-perspective-check。我们想做一个 App 帮小店提高收入，但还没有确定瓶颈。请先理解关键背景，比较可能改变行动的视角，并给出简短的条件建议。
 
 Codex 可用 `$cognitive-perspective-check` 点名；其他客户端使用自身的技能选择方式，或先用自然语言点名。
 
-你应观察到：收入目标与 App 解法被分开；问题数量很少；替代框架说明第一步会怎样不同；AI 有条件地推荐，并让你决定是否深入。
+你应观察到：AI 从已有信息理解目标、约束和关键关系，只在答案会改变判断时补问；检查收入目标与 App 手段之间的预设；少量视角说明证据、取舍和行动差异；给出有依据的条件偏向，并让你选择是否深入一个分支。条件后果或推演应标明假设，不能当成现实预测。
 
 然后换一个新聊天，不点名重复类似需求，检查自然触发。最后试 `2.5 小时是多少分钟？`，应该直接答 `150 分钟`。这些是手动检查目标，不代表已经在你的客户端验证成功。
 
@@ -68,7 +72,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target Copilo
 
 ## GitHub 发布后的在线安装
 
-公开仓库：[EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)。候选版安装包已在 [v0.2.0-rc.1 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.1) 发布。也可下载 [源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)，完整解压后进入包含 `README.md` 和安装入口的文件夹，按本文的双击或手动复制步骤安装。下载 ZIP 和手动复制不依赖 GitHub CLI；在线技能安装命令需另行在目标工具验证。
+公开仓库：[EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)。当前候选版本的发布入口为 [v0.2.0-rc.2 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.2)。也可下载 [源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)，完整解压后进入包含 `README.md` 和安装入口的文件夹，按本文的双击或手动复制步骤安装。下载 ZIP 和手动复制不依赖 GitHub CLI；在线技能安装命令需另行在目标工具验证。
+
+`0.2.0-rc.2` 沿用原安装程序，本轮没有新增模型行为实验。[已有安装和行为验证记录](evals/validation.md) 对应已发布的 `0.2.0-rc.1`，不代表本版已在实际客户端验证自然调用或效果。
 
 ## 维护者检查
 

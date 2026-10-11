@@ -121,7 +121,7 @@ def package_release(source: Path, output: Path) -> tuple[Path, Path, Path]:
         for name, contents in skill_files.items()
     })
     installer_entries[f"{installer_root}/README.md"] = (
-        f"# 问题框架校准器 {version} · Windows 安装包\n\n"
+        f"# 认知视角检查器 {version} · Windows 安装包\n\n"
         "先完整解压这个压缩包，再运行安装入口。\n\n"
         "GitHub Copilot 用户双击 `install-copilot.cmd`；"
         "Codex 与 Copilot 共用时双击 `install-shared.cmd`。两种位置选一种。"
@@ -133,7 +133,7 @@ def package_release(source: Path, output: Path) -> tuple[Path, Path, Path]:
 
     skill_entries = {f"{SKILL_NAME}/{name}": contents for name, contents in skill_files.items()}
     skill_entries[f"{SKILL_NAME}/README.md"] = (
-        f"# 问题框架校准器 {version} · 手动安装\n\n"
+        f"# 认知视角检查器 {version} · 手动安装\n\n"
         f"解压后将整个 `{SKILL_NAME}` 文件夹复制到客户端支持的 skills 目录，"
         "保留内部文件和子目录。个人目录可选 `~/.copilot/skills/` 或 Copilot / Codex "
         "共用的 `~/.agents/skills/`，选一种即可。最终路径应为 "
