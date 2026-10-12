@@ -2,9 +2,21 @@
 
 Cognitive Perspective Check · 用于早期项目、设计和决策讨论的 Agent Skill
 
-一个想法刚提出时，问题常常还没想清楚，方案却已经定了。例如，“给小店做个 App 提高收入”同时包含了一个目标和一种解法。如果 AI 直接接着设计 App，用户和 AI 就可能一起忽略更影响收入的原因。
+很多人向 AI 求助时，手里只有一个大致的想法：想做个项目、需要作出选择，或者遇到一个说不清的问题。相关背景可能散落在前面的对话里，也可能还有一些自己觉得理所当然、没有说出来的限制。让每个人都先写出完整、精准的 prompt，并不现实。
 
-这个项目希望减少这种认知窄化：先弄清会影响判断的背景，再检查双方的假设，比较少量真正会改变行动的视角。AI 要给出有依据的建议，也要说清另一条路线的价值。用户决定接下来验证什么、推演什么，以及何时停止。
+这时，AI 可能把没理解清楚的地方自行补全，也可能沿着用户已经认定的原因继续分析。回答看起来很详细，却未必在解决用户实际遇到的事。更难察觉的是，AI 补出的解释也可能被用户接受，双方就这样围绕同一个未经检查的前提，越聊越窄。
+
+认知视角检查器从这个问题出发。它先利用已有上下文、用户的表达方式和反复提到的重点，形成可以被纠正的初步理解，再用三项以内的关键补问补齐会影响判断的背景。随后检查用户和 AI 各自的假设，比较少量有实际差别的视角，必要时用短推演解释不同选择的后果。AI 给出理由和建议，用户保留选择与继续深入的决定权。
+
+## 为什么从理解问题开始
+
+例如，用户说：“团队项目总延期，我想每天加半小时站会。”如果直接设计站会，讨论已经默认了“沟通不够”是原因。先问一句“最近延期主要卡在等审批、等别人交付，还是进度发现得太晚？”，就可能改变接下来的方案。已有上下文能回答时，不必再问；用户不清楚时，也可以说明假设后给出条件方案。
+
+理解背景之后，还要检查这份理解本身。短会可能帮助及时发现进度偏差，也可能对审批等待没有多少作用；如果每日会议是必须遵守的规则，方案又需要在这个限制内调整。比较这些视角，是为了看见它们各自的依据、收益和代价。短推演则帮助回答：采用这条路线后，哪一步可能卡住，要看什么信号才能知道需要调整。
+
+因此，从理解问题、补齐背景，到检查预设、比较视角和解释后果，都在处理认知窄化的风险。项目希望减少两类情况：AI 没弄清问题就给方案，以及用户和 AI 一起过早锁定某种解释。用户也应能看见建议的条件和其他路线的价值，判断 AI 是否把讨论带偏。
+
+这套流程尽量减少不必要的追问、重复分析和展开，不要求用户先学会写复杂提示词。这里的理解依据来自对话中可核对的信息；表达习惯只能作为线索，不能据此认定用户的背景、性格或隐藏动机。信息不足就保留未知。实际效果与 token 成本仍需要验证。
 
 ## 怎么用
 
@@ -16,13 +28,11 @@ Cognitive Perspective Check · 用于早期项目、设计和决策讨论的 Age
 
 如果你已经要求一份方案、文案或计划，回答应包含能用的成果。之后可以选一条路线继续，也可以纠正 AI 的理解。已经确定的执行任务和普通问答，直接完成即可。
 
-## 为什么这样设计
-
-多列几个方案，仍可能沿用同一个未经检查的前提。这里更关心的是：换一种理解之后，第一步、评价标准或投入方向是否真的会变。例如，收入不足可能与新客少有关，也可能与复购不足有关；两种解释会影响 App 是否值得做，以及先做什么。原因尚不清楚时，AI 应说明要看哪些记录才能区分。
+## 讨论的边界
 
 用户的明确目标和约束需要保留，AI 自己补出的解释则需要接受检查。原方案有合理收益时，要把它讲清楚；证据已经充分时，也不必硬找一个反对意见。
 
-为了控制讨论成本，首轮尽量保持简短，深入工作默认围绕用户选中的一个分支展开。推演用来解释条件和后果，不能把假设情节当成事实证据。这些规则约束提问、展开和阅读负担；实际推理 token 仍由客户端和模型控制。
+首轮尽量保持简短，深入工作默认围绕用户选中的一个分支展开。推演用来解释条件和后果，不能把假设情节当成事实证据。这些规则约束提问、展开和阅读负担；实际推理 token 仍由客户端和模型控制。
 
 ## 安装
 
@@ -65,7 +75,7 @@ npx skills add EversiusJade/cognitive-perspective-check --skill cognitive-perspe
 
 ## English overview
 
-Cognitive Perspective Check is an Agent Skill for early project planning, design, and decision support. It aims to reduce premature cognitive narrowing by checking both user and AI assumptions. It asks only questions that could change the decision, compares a few perspectives with different practical consequences, and explains the evidence and tradeoffs behind its recommendation. The user chooses what to explore next. Evaluation is ongoing; the first eight Codex runs document execution behavior, not a demonstrated improvement in decision quality.
+Cognitive Perspective Check is an Agent Skill for early project planning, design, and decision support. Users often start with incomplete context and a tentative explanation rather than a detailed prompt. The skill uses relevant conversation context and a few consequential questions to establish a revisable understanding, then checks both user and AI assumptions. It compares perspectives with different practical consequences and uses brief, explicitly hypothetical scenarios when useful. The aim is to reduce premature cognitive narrowing throughout the discussion, while leaving goals and final choices with the user. Evaluation is ongoing; the first eight Codex runs document execution behavior, not a demonstrated improvement in decision quality or token savings.
 
 ## 反馈与许可
 
