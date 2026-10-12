@@ -18,7 +18,7 @@
 
 ## 下载与文件结构
 
-下载 [v0.2.0-rc.4 纯 Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check.zip)。本地客户端先解压，再把里面的 `cognitive-perspective-check` **整个文件夹**放到所选目录。最终应是：
+下载 [v0.2.0-rc.4 纯 Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check.zip)。本地客户端先解压，再把里面的 `cognitive-perspective-check` 整个文件夹放到所选目录。最终应是：
 
 ```text
 <所选 skills 目录>/
@@ -33,9 +33,9 @@
 
 ## Claude：本地目录或账户上传
 
-**Claude Code 本地使用：**复制到 `~/.claude/skills/cognitive-perspective-check/`，或当前项目的 `.claude/skills/cognitive-perspective-check/`。新建会话后可用 `/cognitive-perspective-check` 点名。个人本地目录不自动供 Cowork 或云端会话读取，账户端需按其技能管理入口启用。[官方目录与调用说明](https://code.claude.com/docs/en/skills)
+Claude Code 本地使用：复制到 `~/.claude/skills/cognitive-perspective-check/`，或当前项目的 `.claude/skills/cognitive-perspective-check/`。新建会话后可用 `/cognitive-perspective-check` 点名。个人本地目录不自动供 Cowork 或云端会话读取，账户端需按其技能管理入口启用。[官方目录与调用说明](https://code.claude.com/docs/en/skills)
 
-**Claude 网页 / 桌面账户端：**直接上传纯 Skill ZIP，保持压缩包内的 skill 文件夹结构：`Customize → Skills → + → + Create skill → Upload a skill`，上传后打开开关。Skills 需要启用代码执行与文件创建；个人账户可在 `Settings → Capabilities` 设置，组织账户受相应策略管理。本项目核心流程本身没有运行代码的依赖。[官方上传步骤与前提](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
+Claude 网页 / 桌面账户端：直接上传纯 Skill ZIP，保持压缩包内的 skill 文件夹结构：`Customize → Skills → + → + Create skill → Upload a skill`，上传后打开开关。Skills 需要启用代码执行与文件创建；个人账户可在 `Settings → Capabilities` 设置，组织账户受相应策略管理。本项目核心流程本身没有运行代码的依赖。[官方上传步骤与前提](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
 
 ## Cursor：直接使用原生 Skills
 
@@ -47,9 +47,9 @@
 
 每个检查使用新会话，保留客户端、模型、skill 版本、原始输入、完整回复和可获得的调用记录：
 
-1. **点名调用：**“使用 cognitive-perspective-check。团队经常返工，我想用每日打卡改善，两周内见效，但不想增加管理时间。请给首版方案，信息不足可明确假设。”观察是否区分返工现象与原因预设，同时交付方案。
-2. **自然请求：**另开会话，删除前面的点名句。观察客户端是否实际加载 skill；输出相似或 AI 自称使用过，都不能单独证明加载。
-3. **已选分支：**“已决定做一次会前需求对齐，3 人、20 分钟、不新增工具。只写主持稿和记录模板。”观察是否直接制作选中成果。
-4. **普通问题：**“2.5 小时是多少分钟？”应直接给出 `150 分钟`，无需展开视角流程。
+1. 点名调用：“使用 cognitive-perspective-check。团队经常返工，我想用每日打卡改善，两周内见效，但不想增加管理时间。请给首版方案，信息不足可明确假设。”观察是否区分返工现象与原因预设，同时交付方案。
+2. 自然请求：另开会话，删除前面的点名句。观察客户端是否实际加载 skill；输出相似或 AI 自称使用过，都不能单独证明加载。
+3. 已选分支：“已决定做一次会前需求对齐，3 人、20 分钟、不新增工具。只写主持稿和记录模板。”观察是否直接制作选中成果。
+4. 普通问题：“2.5 小时是多少分钟？”应直接给出 `150 分钟`，无需展开视角流程。
 
 这些是手动检查目标，不是评估数据。首轮受控评估与实际演示选择 Codex，当前进度见 [Codex 执行入口与发现预检](evaluation/codex-first-round.md)；跨客户端效果在各自获得调用记录与独立评分后再更新。
