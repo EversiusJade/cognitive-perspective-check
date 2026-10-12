@@ -3,7 +3,7 @@ name: cognitive-perspective-check
 description: Check user and AI assumptions to reduce premature cognitive narrowing in early project, design, and decision discussions. Understand pivotal background with few questions, compare materially different perspectives and their evidence and tradeoffs, and let the user choose further validation or simulation. 减少认知窄化：理解关键背景、检验双方预设、对照少量视角与取舍、给出条件建议。Skip routine facts and settled execution unless a material mismatch needs a brief note.
 license: MIT
 metadata:
-  version: "0.2.0-rc.5"
+  version: "0.2.0-rc.6"
 ---
 
 # Cognitive Perspective Check
@@ -12,11 +12,17 @@ Reduce premature cognitive narrowing in early project, design, and decision work
 
 Preserve explicit goals, hard constraints, and settled choices. Proposed causes, methods, and your own interpretation are provisional. Flag a proposed change of goal or priority; never silently adopt it. Do not invent hidden motives or infer personality. Prior context can inform understanding, but does not establish present priorities.
 
-## Route to the useful scope
+## Choose the scope before analyzing
 
-- **Facts, settled execution, or no consequential perspective gap:** deliver the requested result. Add only a material caveat if needed; no interview or continuation menu.
-- **Early exploration or an unresolved decision:** use the first pass when another reasonable perspective could change action, judgment, success criteria, or tradeoffs. A solution-first request, unsupported cause, proxy metric, restrictive binary, or omitted constraint can signal this. Vague wording alone is insufficient; clear background can still contain a gap.
-- **Chosen continuation:** keep its scope. Read [references/deepen.md](references/deepen.md) only when the chosen validation, comparison, simulation, or deliverable needs structure.
+Explicit invocation selects this skill, not the full analysis workflow. Classify the user's requested work first; keep this routing decision even when the request contains a doubtful causal explanation.
+
+- Facts, settled execution, or no consequential perspective gap: deliver the requested result and finish here. Do not run steps 1–5 or load deeper guidance. For a decided action with a fixed deliverable, an unverified cause alone does not reopen the decision. Avoid presenting that cause as fact in the deliverable. Add at most one short sentence only when it materially affects using the result; no alternative comparison, diagnostic checklist, calculation, recommendation section, or continuation menu. Respect an artifact-only request by omitting surrounding remarks unless essential to prevent a concrete misleading result.
+- Early exploration or an unresolved decision: use steps 1–5 when another reasonable perspective could change action, judgment, success criteria, or tradeoffs. A proposed solution, unsupported cause, proxy metric, restrictive binary, or omitted constraint can signal this only within an unresolved choice. Vague wording alone is insufficient; clear background can still contain a gap.
+- Chosen continuation: keep its scope. Read [references/deepen.md](references/deepen.md) only when the selected validation, comparison, simulation, or deliverable needs structure. Do not reoffer the other branches.
+
+Settled-task example: “使用 cognitive-perspective-check。试用转付费率只有 2%，我觉得是定价太贵，已经决定降价 30%。写一段 100 字以内的降价公告。” A suitable response is just: “产品价格将下调30%。具体适用方案、生效时间及已购用户安排将另行说明。感谢您的支持。” It does not claim price caused the low conversion, invent missing terms, or reopen the pricing decision.
+
+The following steps apply to exploration. They are not extra sections to append after a settled deliverable.
 
 ## 1. Understand pivotal context
 

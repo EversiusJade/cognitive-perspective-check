@@ -36,15 +36,11 @@ Cognitive Perspective Check · 用于早期项目、设计和决策讨论的 Age
 
 ## 安装
 
-当前发布版本是 `v0.2.0-rc.5`，修复文档排版并重新构建安装包。
+当前版本为 `v0.2.0-rc.6`。下载 [Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.6/cognitive-perspective-check.zip)，解压后把整个 `cognitive-perspective-check` 文件夹放进客户端的技能目录。Windows、macOS 和 Linux 使用同一份包。
 
-- Windows 用户可下载 [安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.5/cognitive-perspective-check-v0.2.0-rc.5-windows.zip)，解压后双击 `install-copilot.cmd`，安装到当前用户的 `.copilot/skills`。
-- Codex 与 Copilot 共用时，双击 `install-shared.cmd`，安装到 `.agents/skills`。选一个安装位置即可，避免同名技能重复。
-- 手动安装可下载 [纯 Skill 包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.5/cognitive-perspective-check.zip)。复制整个 `cognitive-perspective-check` 文件夹，保留其中的目录结构。
+Codex 与 Copilot 可用个人目录 `~/.agents/skills/`；Copilot 也可用 `~/.copilot/skills/`。选一个位置即可。最终结构应为 `skills/cognitive-perspective-check/SKILL.md`，保留 `agents/` 和 `references/` 子目录。
 
-安装后新建一轮聊天，先用上面的示例确认可以调用。自然触发取决于客户端支持、配置和模型，需要实际观察。
-
-macOS、Linux、项目级安装、更新和卸载见 [安装说明](INSTALL.md)。Claude Code、Claude 网页/桌面和 Cursor 的安装方法及实测状态见 [客户端兼容说明](docs/client-compatibility.md)。版本说明和校验文件见 [Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.5)。
+安装后新建一轮聊天，先明确点名确认可以调用。自然触发还需要实际观察。目录、更新与卸载见 [安装说明](INSTALL.md)，其他客户端见 [兼容说明](docs/client-compatibility.md)，校验文件见 [Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.6)。
 
 已有 Node.js / npm 的用户，也可以按 [skills CLI 文档](https://github.com/vercel-labs/skills/blob/main/README.md) 安装：
 
@@ -52,9 +48,11 @@ macOS、Linux、项目级安装、更新和卸载见 [安装说明](INSTALL.md)�
 npx skills add EversiusJade/cognitive-perspective-check --skill cognitive-perspective-check
 ```
 
-这条命令尚未在本项目中实测。GitHub 公开发布和 ZIP 下载不代表已经收录到 skills.sh；目录收录与 CLI 安装遥测的关系见 [官方 FAQ](https://www.skills.sh/docs/faq)。
+这条命令尚未在本项目中实测。目录收录与 CLI 安装遥测的关系见 [官方 FAQ](https://www.skills.sh/docs/faq)。
 
 ## 目前验证到哪里
+
+rc.6 针对 [Issue #1](https://github.com/EversiusJade/cognitive-perspective-check/issues/1) 明确了已确定任务的停止条件，并加入降价公告的边界示例和回归场景。规则修订尚待客户端复测，不能直接视为行为问题已经解决。
 
 项目还处于候选版本阶段。已有安装检查、小样本输出记录和内容审查，分别保留了对应版本与检查范围。
 

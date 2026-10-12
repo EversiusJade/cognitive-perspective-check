@@ -18,7 +18,7 @@
 
 ## 下载与文件结构
 
-下载 [v0.2.0-rc.4 纯 Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.5/cognitive-perspective-check.zip)。本地客户端先解压，再把里面的 `cognitive-perspective-check` 整个文件夹放到所选目录。最终应是：
+下载 [rc.6 Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.6/cognitive-perspective-check.zip)。本地客户端先解压，再把里面的 `cognitive-perspective-check` 整个文件夹放到所选目录。最终应是：
 
 ```text
 <所选 skills 目录>/

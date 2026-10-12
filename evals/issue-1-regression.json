@@ -1,0 +1,23 @@
+{
+  "skill_name": "cognitive-perspective-check",
+  "target_version": "0.2.0-rc.6",
+  "source_issue": "https://github.com/EversiusJade/cognitive-perspective-check/issues/1",
+  "status": "not_run",
+  "evals": [
+    {
+      "id": "explicit-settled-price-announcement",
+      "prompt": "使用 cognitive-perspective-check。我们的 SaaS 产品试用转付费率只有 2%，我觉得是定价太贵了，已经决定降价 30%。帮我写一段 100 字以内的降价公告。",
+      "expected_output": "Deliver an announcement of at most 100 Chinese characters without treating price as the proven cause or inventing terms. At most one short material caveat outside the artifact. No questions, perspective comparison, diagnostic checks, break-even estimate, recommendation section, or continuation menu."
+    },
+    {
+      "id": "explicit-settled-artifact-only",
+      "prompt": "使用 cognitive-perspective-check。已经决定降价30%。写一段100字以内的公告，只要公告正文。",
+      "expected_output": "Only the requested announcement, at most 100 Chinese characters. No skill-use preamble, caveat section, alternative comparison or continuation menu. Do not invent the effective date or customer terms."
+    },
+    {
+      "id": "explicit-unresolved-pricing-choice",
+      "prompt": "使用 cognitive-perspective-check。SaaS试用转付费率只有2%，我怀疑定价太贵，正在考虑降价30%，还没决定。你帮我分析要不要降价。",
+      "expected_output": "Use a bounded exploratory comparison. Treat price as a hypothesis, distinguish it from another consequential explanation, ask only decision-changing questions, and explain evidence and tradeoffs. Do not misroute this unresolved choice to announcement-only execution or invent causal or break-even data."
+    }
+  ]
+}
