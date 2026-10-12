@@ -1,6 +1,6 @@
 # 客户端兼容与安装路线
 
-核对日期：2026-10-11；核心版本：`0.2.0-rc.4`。各客户端沿用同一份 `SKILL.md` 和 `references/deepen.md`，目标都是减少用户与 AI 在早期项目、设计和决策中的认知窄化。
+文档更新：2026-10-12；当前核心版本：`0.2.0-rc.6`。下表的实际验证记录注明各自版本。各客户端沿用同一份 `SKILL.md` 和 `references/deepen.md`，目标都是减少用户与 AI 在早期项目、设计和决策中的认知窄化。
 
 ## 支持机制、安装路线与验证状态
 
@@ -8,8 +8,8 @@
 
 | 客户端 | 官方支持机制 | 本项目安装路线 | 本项目实际验证 |
 |---|---|---|---|
-| Codex | 本地 Agent Skills；个人 `~/.agents/skills/`、项目 `.agents/skills/` | Windows 共用安装入口，或复制完整 skill 文件夹 | rc.4 文件已安装并核对内容；CLI 隔离预检与 8 次实际单轮工程采集已完成；独立人工评分、探索性增益与自然路由仍待验证 |
-| GitHub Copilot | Agent Skills；个人 `~/.copilot/skills/` 或 `~/.agents/skills/`；项目 `.github/skills/` 或 `.agents/skills/` | Windows Copilot / 共用安装入口，或手动复制 | rc.1 隔离目录安装程序检查 12 项通过；尚无实际 Copilot 客户端调用证据 |
+| Codex | 本地 Agent Skills；个人 `~/.agents/skills/`、项目 `.agents/skills/` | 复制完整 skill 文件夹 | rc.4 文件已安装并核对内容；CLI 隔离预检与 8 次实际单轮工程采集已完成；独立人工评分、探索性增益与自然路由仍待验证 |
+| GitHub Copilot | Agent Skills；个人 `~/.copilot/skills/` 或 `~/.agents/skills/`；项目 `.github/skills/` 或 `.agents/skills/` | 复制完整 skill 文件夹 | 历史 rc.1 的安装程序检查 12 项通过；尚无实际 Copilot 客户端调用证据 |
 | Claude Code | 本地原生 Skills；个人 `~/.claude/skills/`、项目 `.claude/skills/` | 手动复制完整 skill 文件夹 | 已按官方格式与路径提供说明；未在 Claude Code 实测 |
 | Claude 网页 / 桌面账户端 | 自定义原生 Skills；上传包含 skill 文件夹的 ZIP | 上传本项目纯 Skill ZIP 并启用 | 包结构与官方要求相符是格式判断；上传、调用和效果未实测 |
 | Cursor | 原生 Agent Skills；个人与项目均可使用 `.cursor/skills/` 或 `.agents/skills/` | 手动复制；已有共用目录时只保留一份 | 已按官方格式与路径提供说明；未在 Cursor 实测 |
