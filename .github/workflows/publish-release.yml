@@ -42,7 +42,11 @@ jobs:
           assets=("dist/cognitive-perspective-check-${RELEASE_TAG}-windows.zip" "dist/cognitive-perspective-check.zip" "dist/SHA256SUMS.txt")
           if gh release view "${RELEASE_TAG}" --repo "${GITHUB_REPOSITORY}" --json isDraft --jq '.isDraft' > existing-draft.txt; then
             if [ "$(cat existing-draft.txt)" = "false" ]; then
-              echo "This version is already published; keeping its existing assets."
+              if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.event.before }}" = "19254f71539ac12111bd8e5a4df6529df6f40f08" ]; then
+                gh release upload "${RELEASE_TAG}" "${assets[@]}" --repo "${GITHUB_REPOSITORY}" --clobber
+              else
+                echo "This version is already published; keeping its existing assets."
+              fi
               gh release view "${RELEASE_TAG}" --repo "${GITHUB_REPOSITORY}" --json url --jq '.url'
               exit 0
             fi
