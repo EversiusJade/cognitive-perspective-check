@@ -1,8 +1,8 @@
 # 安装、更新与首次验证
 
-本说明适用于 认知视角检查器 · Cognitive Perspective Check，稳定安装标识为 `cognitive-perspective-check`。当前候选版本为 `0.2.0-rc.4`。
+本说明适用于 认知视角检查器 · Cognitive Perspective Check，稳定安装标识为 `cognitive-perspective-check`。当前候选版本为 `0.2.0-rc.5`。
 
-下载入口：[Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check-v0.2.0-rc.4-windows.zip)、[纯 Skill 包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check.zip)、[版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.4)。
+下载入口：[Windows 便捷安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.5/cognitive-perspective-check-v0.2.0-rc.5-windows.zip)、[纯 Skill 包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.5/cognitive-perspective-check.zip)、[版本说明与校验文件](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.5)。
 
 ## Windows：解压后双击
 
@@ -47,7 +47,7 @@ Codex 或共用目录将 `.copilot/skills` 换成 `.agents/skills`。这些命�
 核心文件可沿用同一份 `skills/cognitive-perspective-check/`：
 
 - Claude Code：复制完整文件夹到个人 `~/.claude/skills/` 或项目 `.claude/skills/`，最终为 `cognitive-perspective-check/SKILL.md`。
-- Claude 网页 / 桌面：在可用的 Skills 设置中上传 [纯 Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check.zip) 并启用；按客户端要求启用代码执行与文件创建。
+- Claude 网页 / 桌面：在可用的 Skills 设置中上传 [纯 Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.5/cognitive-perspective-check.zip) 并启用；按客户端要求启用代码执行与文件创建。
 - Cursor：复制到项目 `.cursor/skills/` 或 `.agents/skills/`；个人目录可用 `~/.cursor/skills/` 或 `~/.agents/skills/`，选一个位置。
 
 这些路线依据官方原生机制提供，尚未在本项目中逐客户端实测；本地目录不会自动同步到云端。完整步骤、官方来源、首次检查及验证状态见 [客户端兼容指南](docs/client-compatibility.md)。
@@ -84,7 +84,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Target Copilo
 
 ## GitHub 发布后的在线安装
 
-公开仓库：[EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)。当前候选版本的发布入口为 [v0.2.0-rc.4 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.4)。也可下载 [源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)，完整解压后进入包含 `README.md` 和安装入口的文件夹，按本文的双击或手动复制步骤安装。下载 ZIP 和手动复制不依赖 GitHub CLI；在线技能安装命令需另行在目标工具验证。
+公开仓库：[EversiusJade/cognitive-perspective-check](https://github.com/EversiusJade/cognitive-perspective-check)。当前候选版本的发布入口为 [v0.2.0-rc.5 Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.5)。也可下载 [源码 ZIP](https://github.com/EversiusJade/cognitive-perspective-check/archive/refs/heads/main.zip)，完整解压后进入包含 `README.md` 和安装入口的文件夹，按本文的双击或手动复制步骤安装。下载 ZIP 和手动复制不依赖 GitHub CLI；在线技能安装命令需另行在目标工具验证。
 
 `0.2.0-rc.4` 沿用原安装程序，发布时进行了内容与分发静态审查。[已有安装和行为验证记录](https://github.com/EversiusJade/cognitive-perspective-check/blob/v0.2.0-rc.1/evals/validation.md) 对应已发布的 `0.2.0-rc.1`，不代表本版已在实际客户端验证自然调用或效果。
 

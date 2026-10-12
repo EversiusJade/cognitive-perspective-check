@@ -36,15 +36,15 @@ Cognitive Perspective Check · 用于早期项目、设计和决策讨论的 Age
 
 ## 安装
 
-当前发布版本是 `v0.2.0-rc.4`。
+当前发布版本是 `v0.2.0-rc.5`，修复文档排版并重新构建安装包。
 
-- Windows 用户可下载 [安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check-v0.2.0-rc.4-windows.zip)，解压后双击 `install-copilot.cmd`，安装到当前用户的 `.copilot/skills`。
+- Windows 用户可下载 [安装包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.5/cognitive-perspective-check-v0.2.0-rc.5-windows.zip)，解压后双击 `install-copilot.cmd`，安装到当前用户的 `.copilot/skills`。
 - Codex 与 Copilot 共用时，双击 `install-shared.cmd`，安装到 `.agents/skills`。选一个安装位置即可，避免同名技能重复。
-- 手动安装可下载 [纯 Skill 包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.4/cognitive-perspective-check.zip)。复制整个 `cognitive-perspective-check` 文件夹，保留其中的目录结构。
+- 手动安装可下载 [纯 Skill 包](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.5/cognitive-perspective-check.zip)。复制整个 `cognitive-perspective-check` 文件夹，保留其中的目录结构。
 
 安装后新建一轮聊天，先用上面的示例确认可以调用。自然触发取决于客户端支持、配置和模型，需要实际观察。
 
-macOS、Linux、项目级安装、更新和卸载见 [安装说明](INSTALL.md)。Claude Code、Claude 网页/桌面和 Cursor 的安装方法及实测状态见 [客户端兼容说明](docs/client-compatibility.md)。版本说明和校验文件见 [Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.4)。
+macOS、Linux、项目级安装、更新和卸载见 [安装说明](INSTALL.md)。Claude Code、Claude 网页/桌面和 Cursor 的安装方法及实测状态见 [客户端兼容说明](docs/client-compatibility.md)。版本说明和校验文件见 [Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.5)。
 
 已有 Node.js / npm 的用户，也可以按 [skills CLI 文档](https://github.com/vercel-labs/skills/blob/main/README.md) 安装：
 

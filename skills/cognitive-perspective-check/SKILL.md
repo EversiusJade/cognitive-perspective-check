@@ -3,7 +3,7 @@ name: cognitive-perspective-check
 description: Check user and AI assumptions to reduce premature cognitive narrowing in early project, design, and decision discussions. Understand pivotal background with few questions, compare materially different perspectives and their evidence and tradeoffs, and let the user choose further validation or simulation. 减少认知窄化：理解关键背景、检验双方预设、对照少量视角与取舍、给出条件建议。Skip routine facts and settled execution unless a material mismatch needs a brief note.
 license: MIT
 metadata:
-  version: "0.2.0-rc.4"
+  version: "0.2.0-rc.5"
 ---
 
 # Cognitive Perspective Check

@@ -25,7 +25,7 @@
   "artifact_sha256": {
     "calibration-examples.md": "19e5bf7c8b58ab2bed09d6264605b72db851d533e4424e38e1e1db2393c0d785",
     "CHANGELOG.md": "fbf9c5e00ed3fbb2007dcfac39878420a40bf73acbeba9c383a379af98c16d73",
-    "experiment-design.md": "f682bddafdf27dbd73b8818aa45dfbe49663fb917c335180f4986a4adcc400d3",
+    "experiment-design.md": "f7cfdd8472a847bfc341870769ecbff168e80a6d67fffde972e934216a5c09b4",
     "inputs.json": "9c1a11e3aa4c14a9120c7448a5aea906b929b8944992248d91984b4d84c2beb1",
     "preregistration-template.json": "30964027cd40d5075971ba2a53a9a2b470919b851036d4a4549412ff432eddf2",
     "ratings-template.csv": "ebcd794d4f0d91f3dc7a06a9b59649cce73c6b1d58b92d1e6e46d7fc2743d1e8",
@@ -37,5 +37,16 @@
   },
   "static_review_only": true,
   "note": "文件哈希绑定本地实际内容；目标技能来源已核对远程main基准提交。实验尚未执行；真实运行配置须在采集前登记。",
-  "publication_base_commit_sha": "31bc80d5967ac205c59595ac88c22ce9d64d9bac"
+  "publication_base_commit_sha": "31bc80d5967ac205c59595ac88c22ce9d64d9bac",
+  "presentation_revision": {
+    "date": "2026-10-12",
+    "change": "Remove Markdown emphasis markers only; protocol words, inputs and rubric unchanged.",
+    "original_frozen_commit": "c8bf69d4696523bf93a573745ebeb39afcf83b89",
+    "original_artifact_sha256": {
+      "experiment-design.md": "f682bddafdf27dbd73b8818aa45dfbe49663fb917c335180f4986a4adcc400d3"
+    },
+    "display_artifact_sha256": {
+      "experiment-design.md": "f7cfdd8472a847bfc341870769ecbff168e80a6d67fffde972e934216a5c09b4"
+    }
+  }
 }
