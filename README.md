@@ -1,82 +1,80 @@
 # 认知视角检查器
 
-Cognitive Perspective Check · 用于早期项目、设计和决策讨论的 Agent Skill
+Cognitive Perspective Check · 用来讨论项目、设计和选择的 Agent Skill
 
-很多人向 AI 求助时，手里只有一个大致的想法：想做个项目、需要作出选择，或者遇到一个说不清的问题。相关背景可能散落在前面的对话里，也可能还有一些自己觉得理所当然、没有说出来的限制。让每个人都先写出完整、精准的 prompt，并不现实。
+“我想给小店做个 App。”“团队总延期，要不要每天加个站会？”
 
-这时，AI 可能把没理解清楚的地方自行补全，也可能沿着用户已经认定的原因继续分析。回答看起来很详细，却未必在解决用户实际遇到的事。更难察觉的是，AI 补出的解释也可能被用户接受，双方就这样围绕同一个未经检查的前提，越聊越窄。
+很多讨论一开始就带着一个方案。目标是什么，问题卡在哪，这个方案为什么会有效，往往还没讲清。AI 顺着往下写，很快就能给出一份完整计划，最初的判断也就这样被默认了。
 
-认知视角检查器从这个问题出发。它先利用已有上下文、用户的表达方式和反复提到的重点，形成可以被纠正的初步理解，再用三项以内的关键补问补齐会影响判断的背景。随后检查用户和 AI 各自的假设，比较少量有实际差别的视角，必要时用短推演解释不同选择的后果。AI 给出理由和建议，用户保留选择与继续深入的决定权。
+我做认知视角检查器，是想让 AI 先把问题看清楚：利用已有背景，问少量会改变方向的问题，把用户和 AI 各自的假设摆出来，再比较几条真正影响行动的路线。
 
-## 为什么从理解问题开始
+用户不用先写一份完美的 prompt。可以带着一个模糊想法开始，也可以纠正 AI 的理解。最后得到的建议，要说清为什么这么选、适合什么条件，以及什么信息会让判断改变。
 
-例如，用户说：“团队项目总延期，我想每天加半小时站会。”如果直接设计站会，讨论已经默认了“沟通不够”是原因。先问一句“最近延期主要卡在等审批、等别人交付，还是进度发现得太晚？”，就可能改变接下来的方案。已有上下文能回答时，不必再问；用户不清楚时，也可以说明假设后给出条件方案。
+## 拿“团队总延期”举个例子
 
-理解背景之后，还要检查这份理解本身。短会可能帮助及时发现进度偏差，也可能对审批等待没有多少作用；如果每日会议是必须遵守的规则，方案又需要在这个限制内调整。比较这些视角，是为了看见它们各自的依据、收益和代价。短推演则帮助回答：采用这条路线后，哪一步可能卡住，要看什么信号才能知道需要调整。
+> 团队项目总延期，我想每天加半小时站会。大家已经抱怨会多，别问太多。
 
-因此，从理解问题、补齐背景，到检查预设、比较视角和解释后果，都在处理认知窄化的风险。项目希望减少两类情况：AI 没弄清问题就给方案，以及用户和 AI 一起过早锁定某种解释。用户也应能看见建议的条件和其他路线的价值，判断 AI 是否把讨论带偏。
+这是一个设计示例。这里值得先弄清的是：延期主要卡在等审批、等别人交付，还是进度偏差发现得太晚？已有对话能回答时，就直接用；需要补充时，先问这一个问题。
 
-这套流程尽量减少不必要的追问、重复分析和展开，不要求用户先学会写复杂提示词。这里的理解依据来自对话中可核对的信息；表达习惯只能作为线索，不能据此认定用户的背景、性格或隐藏动机。信息不足就保留未知。实际效果与 token 成本仍需要验证。
+如果进度发现得太晚，短会可以帮助及时暴露问题；如果主要在等待审批，接下来更需要明确谁来处理阻塞。用户暂时不知道原因，也可以先得到按不同情况安排的方案。
+
+再补一句“老板要求每天开会”，建议就要沿着这条约束调整：利用会议确认阻塞和处理人。已经讲清的背景继续沿用，讨论不用从头再来。
+
+我希望它帮人看见这种差别：表面上都在解决延期，真正需要采取的行动可能不同。
 
 ## 怎么用
 
-不需要先整理一份完整的需求文档。描述你现在的想法、已有约束，以及希望得到的结果即可。第一次使用可以直接点名：
+安装后，在聊天里点名调用，描述你现在的想法、已有条件和想得到的结果：
 
-> 使用 cognitive-perspective-check。我们想给小店做个 App 提高收入，但还不清楚瓶颈。请帮我分析有哪些不同的理解，各自会怎样影响方案。
+> 使用 cognitive-perspective-check。我想给小店做个 App 提高收入，但还不清楚瓶颈。帮我看看有哪些值得比较的方向。
 
-默认流程是利用已有上下文，优先问一个会改变方向的问题；信息足够时直接分析。初始澄清累计最多补问三项关键信息，通常比较两个视角。回答需要说明各条路线的依据、收益和代价，并给出建议成立的条件。
+它会先读已有上下文。信息足够就继续，缺少会影响选择的条件才补问；通常零问或一问，初始澄清累计最多三项关键信息。接着通常比较两个视角，解释各自的依据、收益和代价，再给出有条件的建议。
 
-如果你已经要求一份方案、文案或计划，回答应包含能用的成果。之后可以选一条路线继续，也可以纠正 AI 的理解。已经确定的执行任务和普通问答，直接完成即可。
+你可以选一条路线继续验证或推演，也可以要求当轮给出方案、文案或计划。推演会标明假设，帮助发现下一步该查什么。
 
-## 讨论的边界
-
-用户的明确目标和约束需要保留，AI 自己补出的解释则需要接受检查。原方案有合理收益时，要把它讲清楚；证据已经充分时，也不必硬找一个反对意见。
-
-首轮尽量保持简短，深入工作默认围绕用户选中的一个分支展开。推演用来解释条件和后果，不能把假设情节当成事实证据。这些规则约束提问、展开和阅读负担；实际推理 token 仍由客户端和模型控制。
+已经确定的任务直接完成。比如只要一段降价公告，就写公告；普通问答也直接回答。这些收束规则在 `rc.6` 中进一步明确，避免每次都展开一轮分析。
 
 ## 安装
 
-当前版本为 `v0.2.0-rc.6`。下载 [Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.6/cognitive-perspective-check.zip)，解压后把整个 `cognitive-perspective-check` 文件夹放进客户端的技能目录。Windows、macOS 和 Linux 使用同一份包。
+当前版本：`v0.2.0-rc.6`。
 
-Codex 与 Copilot 可用个人目录 `~/.agents/skills/`；Copilot 也可用 `~/.copilot/skills/`。选一个位置即可。最终结构应为 `skills/cognitive-perspective-check/SKILL.md`，保留 `agents/` 和 `references/` 子目录。
+下载 [Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.6/cognitive-perspective-check.zip)，解压后把整个 `cognitive-perspective-check` 文件夹放进客户端的技能目录。Codex 与 Copilot 可使用 `~/.agents/skills/`，最终结构为：
 
-安装后新建一轮聊天，先明确点名确认可以调用。自然触发还需要实际观察。目录、更新与卸载见 [安装说明](INSTALL.md)，其他客户端见 [兼容说明](docs/client-compatibility.md)，校验文件见 [Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.6)。
-
-已有 Node.js / npm 的用户，也可以按 [skills CLI 文档](https://github.com/vercel-labs/skills/blob/main/README.md) 安装：
-
-```sh
-npx skills add EversiusJade/cognitive-perspective-check --skill cognitive-perspective-check
+```text
+skills/cognitive-perspective-check/
+├── SKILL.md
+├── agents/
+└── references/
 ```
 
-这条命令尚未在本项目中实测。目录收录与 CLI 安装遥测的关系见 [官方 FAQ](https://www.skills.sh/docs/faq)。
+安装后新建聊天，点名调用一次。其他目录、更新和卸载见 [安装说明](INSTALL.md)，其他客户端见 [兼容说明](docs/client-compatibility.md)。
 
-## 目前验证到哪里
+## 验证与迭代
 
-rc.6 针对 [Issue #1](https://github.com/EversiusJade/cognitive-perspective-check/issues/1) 明确了已确定任务的停止条件，并加入降价公告的边界示例和回归场景。规则修订尚待客户端复测，不能直接视为行为问题已经解决。
+已有 [8 次 Codex 实际采集](evals/runs/2026-10-11-codex-rc4-first-batch/REPORT.md)：两个单轮场景，分别在无 Skill、简短提示、安装但不点名、点名调用四种条件下运行。回答、原生 token 用量和工具失败都保留在记录中。
 
-项目还处于候选版本阶段。已有安装检查、小样本输出记录和内容审查，分别保留了对应版本与检查范围。
+这些记录用于检查触发和执行情况。独立人工评分尚未完成，多视角分析对判断质量的影响还需后续对照。`rc.6` 根据 [Issue #1](https://github.com/EversiusJade/cognitive-perspective-check/issues/1) 补充了已确定任务的停止条件，客户端复测待完成。
 
-最近完成了 [8 次 Codex 实际采集](evals/runs/2026-10-11-codex-rc4-first-batch/REPORT.md)：两个单轮场景分别在无 skill、简短提示、安装但不点名、点名调用四种条件下运行。记录包含回答、原生 token 用量和工具失败。点名调用的两个回合都增加了额外说明，其中一个读取 skill 时遇到了工具错误。
+实验方法见 [对照方案](evals/experiment/README.md)，历史记录见 [早期验证](evals/validation.md)。
 
-这批数据能帮助定位执行问题，还不能证明多视角分析有增益。计划中的其余 40 次采集和独立人工评分尚未完成，也没有真实用户采纳率或 token 节省比例。
+## 从框架到资料查证
 
-实验方法见 [对照方案](evals/experiment/README.md)，Codex 采集方法见 [运行说明](docs/evaluation/codex-first-round.md)。早期 `rc.1` 的结果保留在 [历史验证记录](evals/validation.md)。[演示脚本](docs/demo-script.md) 已准备，实际录屏尚未完成。
+这个 Skill 负责理清问题、检查预设和比较视角。需要实际搜索资料时，我把这套流程接进了另一个项目：[观照 · 多视角调研](https://github.com/EversiusJade/guanzhao-research)。观照调用搜索和正文读取工具，把网页出处及资料对选择的参考价值整理进报告。
 
-## 继续了解
+## 文档与反馈
 
-- [研究目的](docs/research-purpose.md)：要减少哪些判断偏差，以及准备观察什么。
-- [对话示例](docs/examples.md)：从一个带预设的需求，到比较、纠正和交付。
-- [设计取舍](docs/design-decisions.md)：为什么限制追问和展开，怎样保留用户选择。
-- [相关项目](docs/comparison.md)：与提问、批判性思考和问题重构方法的重叠与区别。
+- [更多例子](docs/examples.md)：补充背景、纠正理解，再推进到成果。
+- [设计取舍](docs/design-decisions.md)：为什么限制追问，怎样保留用户的目标和选择。
+- [研究目的](docs/research-purpose.md)与[相关项目](docs/comparison.md)：问题定义和对照思路。
 
-核心规则在 `skills/cognitive-perspective-check/SKILL.md`。`references/deepen.md` 用于用户选定后的深入工作；安装程序、文档和评估材料分别放在仓库根目录、`docs/` 与 `evals/`。
+核心规则在 `skills/cognitive-perspective-check/SKILL.md`，深入工作放在 `references/deepen.md`。
+
+如果它问多了、忽略了条件，或者某个视角帮你看到了新的选择，欢迎在 [Issues](https://github.com/EversiusJade/cognitive-perspective-check/issues) 留下原问题和回答，去掉私人信息即可。
 
 ## English overview
 
-Cognitive Perspective Check is an Agent Skill for early project planning, design, and decision support. Users often start with incomplete context and a tentative explanation rather than a detailed prompt. The skill uses relevant conversation context and a few consequential questions to establish a revisable understanding, then checks both user and AI assumptions. It compares perspectives with different practical consequences and uses brief, explicitly hypothetical scenarios when useful. The aim is to reduce premature cognitive narrowing throughout the discussion, while leaving goals and final choices with the user. Evaluation is ongoing; the first eight Codex runs document execution behavior, not a demonstrated improvement in decision quality or token savings.
+Cognitive Perspective Check is an Agent Skill for discussing projects, designs, and decisions. It uses the context already available, asks a few consequential questions, and checks assumptions on both sides before comparing practical alternatives. Suggestions explain when they apply and what would change them. Settled tasks are completed directly.
 
-## 反馈与许可
+## License
 
-欢迎通过 [Issues](https://github.com/EversiusJade/cognitive-perspective-check/issues) 或 [反馈模板](https://github.com/EversiusJade/cognitive-perspective-check/issues/new?template=usage-feedback.md) 提供实际案例。给出原问题、AI 的回答，以及哪一步有帮助或造成阻碍即可；方便时再补充客户端、模型和版本。请去掉敏感信息。
-
-项目使用 [MIT 许可证](LICENSE)。
+[MIT](LICENSE)。
