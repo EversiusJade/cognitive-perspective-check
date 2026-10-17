@@ -3,7 +3,7 @@ name: cognitive-perspective-check
 description: Check user and AI assumptions to reduce premature cognitive narrowing in early project, design, and decision discussions. Understand pivotal background with few questions, compare materially different perspectives and their evidence and tradeoffs, and let the user choose further validation or simulation. 减少认知窄化：理解关键背景、检验双方预设、对照少量视角与取舍、给出条件建议。Skip routine facts and settled execution unless a material mismatch needs a brief note.
 license: MIT
 metadata:
-  version: "0.2.0-rc.6"
+  version: "0.2.0-rc.7"
 ---
 
 # Cognitive Perspective Check
@@ -21,6 +21,19 @@ Explicit invocation selects this skill, not the full analysis workflow. Classify
 - Chosen continuation: keep its scope. Read [references/deepen.md](references/deepen.md) only when the selected validation, comparison, simulation, or deliverable needs structure. Do not reoffer the other branches.
 
 Settled-task example: “使用 cognitive-perspective-check。试用转付费率只有 2%，我觉得是定价太贵，已经决定降价 30%。写一段 100 字以内的降价公告。” A suitable response is just: “产品价格将下调30%。具体适用方案、生效时间及已购用户安排将另行说明。感谢您的支持。” It does not claim price caused the low conversion, invent missing terms, or reopen the pricing decision.
+
+## Review before delivery
+
+Before delivering a substantive judgment or artifact, review the proposed answer once within the selected scope. Reuse checks already made; do not restart the analysis.
+
+- Check that the answer serves the user's stated goal, constraints, chosen branch, and requested format. An inferred intention is still an assumption.
+- In an exploration or selected comparison, check that the alternative changes action or evaluation and retains the original route's strongest legitimate benefit. Omit this check for settled execution; do not invent another perspective to satisfy review.
+- Check influential claims against their stated support. Keep observations, assumptions, preferences, and simulated consequences distinct; a plausible scenario does not verify its premise.
+- Check that any recommendation follows from the evidence and priorities given, states a consequential condition that could change it, and supplies the requested usable result where possible.
+
+Repair material defects directly. If missing evidence prevents a firm conclusion, narrow the claim and identify the useful next check. Review does not increase question or perspective limits, reopen settled choices, or trigger extra searches, agents, or simulations. Stop after this pass; later user corrections can still update the result.
+
+Keep the review checklist out of the reply unless requested. Surface a correction, evidence gap, or changed recommendation when it affects the user's choice. Do not claim independent or external verification unless it actually occurred.
 
 The following steps apply to exploration. They are not extra sections to append after a settled deliverable.
 
@@ -58,7 +71,7 @@ When a factual unknown dominates, propose the smallest feasible check that disti
 
 Aim for one short screen containing the useful understanding, perspectives, support, tradeoffs, and recommendation or next action. Use a table only if it helps. Follow the user's requested format and depth; A/B labels are not required.
 
-If the user requested a plan, draft, or file, deliver a usable scoped version now when possible, integrating necessary qualifications into it. Do not postpone an authorized deliverable until B. For an artifact, make one brief completion check against the requested outcome, constraints, and format, and repair evident gaps without expanding analysis. Distinguish a proposed plan from actions actually performed; state any concrete remaining blocker.
+If the user requested a plan, draft, or file, deliver a usable scoped version now when possible, integrating necessary qualifications into it. Do not postpone an authorized deliverable until B. Apply the single review above to the artifact; do not add another completion pass. Distinguish a proposed plan from actions actually performed; state any concrete remaining blocker.
 
 ## 5. Deepen B by choice, then stop
 
