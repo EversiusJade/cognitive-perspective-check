@@ -1,6 +1,6 @@
 # 安装
 
-下载 [rc.7 Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.7/cognitive-perspective-check.zip) 并解压，将整个 `cognitive-perspective-check` 文件夹复制到客户端支持的技能目录。核心文件不需要执行脚本。
+下载 [rc.8 Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.8/cognitive-perspective-check.zip) 并解压，将整个 `cognitive-perspective-check` 文件夹复制到客户端支持的技能目录。核心文件不需要执行脚本。
 
 ## 放到哪里
 
@@ -31,4 +31,4 @@
 
 检查目录、大小写、是否重复套文件夹，以及客户端是否支持这个位置。能找到但自然请求不触发时，先明确点名，并记录客户端、模型和原始请求。
 
-rc.7 使用手动复制或客户端安装工具。历史 Windows 安装检查和 8 次 Codex 采集分别对应旧版本；本次没有新增客户端行为实验。公开版本及校验文件见 [Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.7)。
+rc.8 使用手动复制或客户端安装工具。历史 Windows 安装检查和 8 次 Codex 采集分别对应旧版本；本次没有新增客户端行为实验。公开版本及校验文件见 [Release](https://github.com/EversiusJade/cognitive-perspective-check/releases/tag/v0.2.0-rc.8)。

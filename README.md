@@ -34,13 +34,13 @@ Cognitive Perspective Check · 用来讨论项目、设计和选择的 Agent Ski
 
 给出结果前，再做一次简短 review：有没有偏离你的目标，视角是否真的改变了行动，有没有把猜测或推演写成事实，建议是否有依据。发现实质问题就直接修正，不额外加一轮问答或一整段审阅报告。
 
-已经确定的任务直接完成。比如只要一段降价公告，就写公告；普通问答也直接回答。这些收束规则在 `rc.6` 中进一步明确，避免每次都展开一轮分析。
+已经确定的任务直接完成。比如只要一段降价公告，就写公告；普通问答也直接回答。缺少可暂定的细节时，先给能用的版本并标清假设；缺的是原文、关键约束等真正阻塞成果的信息，才补问那一点。这些收束规则在 `rc.6` 中进一步明确，避免每次都展开一轮分析。
 
 ## 安装
 
-当前版本：`v0.2.0-rc.7`。
+当前版本：`v0.2.0-rc.8`。
 
-下载 [Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.7/cognitive-perspective-check.zip)，解压后把整个 `cognitive-perspective-check` 文件夹放进客户端的技能目录。Codex 与 Copilot 可使用 `~/.agents/skills/`，最终结构为：
+下载 [Skill ZIP](https://github.com/EversiusJade/cognitive-perspective-check/releases/download/v0.2.0-rc.8/cognitive-perspective-check.zip)，解压后把整个 `cognitive-perspective-check` 文件夹放进客户端的技能目录。Codex 与 Copilot 可使用 `~/.agents/skills/`，最终结构为：
 
 ```text
 skills/cognitive-perspective-check/
@@ -55,7 +55,7 @@ skills/cognitive-perspective-check/
 
 已有 [8 次 Codex 实际采集](evals/runs/2026-10-11-codex-rc4-first-batch/REPORT.md)：两个单轮场景，分别在无 Skill、简短提示、安装但不点名、点名调用四种条件下运行。回答、原生 token 用量和工具失败都保留在记录中。
 
-这些记录用于检查触发和执行情况。独立人工评分尚未完成，多视角分析对判断质量的影响还需后续对照。`rc.6` 根据 [Issue #1](https://github.com/EversiusJade/cognitive-perspective-check/issues/1) 补充了已确定任务的停止条件，客户端复测待完成。`rc.7` 补充交付前的一次有限 review；这次修改完成了规则与文档审阅，未新增模型效果或 token 成本实验。
+这些记录用于检查触发和执行情况。独立人工评分尚未完成，多视角分析对判断质量的影响还需后续对照。`rc.6` 根据 [Issue #1](https://github.com/EversiusJade/cognitive-perspective-check/issues/1) 补充了已确定任务的停止条件，客户端复测待完成。`rc.7` 补充交付前的一次有限 review；这次修改完成了规则与文档审阅，未新增模型效果或 token 成本实验。`rc.8` 进一步明确执行任务与关键缺口的区别，收紧复合提问，补充已有投入与切换成本的处理。
 
 实验方法见 [对照方案](evals/experiment/README.md)，历史记录见 [早期验证](evals/validation.md)。
 

@@ -3,7 +3,7 @@ name: cognitive-perspective-check
 description: Check user and AI assumptions to reduce premature cognitive narrowing in early project, design, and decision discussions. Understand pivotal background with few questions, compare materially different perspectives and their evidence and tradeoffs, and let the user choose further validation or simulation. 减少认知窄化：理解关键背景、检验双方预设、对照少量视角与取舍、给出条件建议。Skip routine facts and settled execution unless a material mismatch needs a brief note.
 license: MIT
 metadata:
-  version: "0.2.0-rc.7"
+  version: "0.2.0-rc.8"
 ---
 
 # Cognitive Perspective Check
@@ -15,6 +15,10 @@ Preserve explicit goals, hard constraints, and settled choices. Proposed causes,
 ## Choose the scope before analyzing
 
 Explicit invocation selects this skill, not the full analysis workflow. Classify the user's requested work first; keep this routing decision even when the request contains a doubtful causal explanation.
+
+Route by the requested outcome, not by an action verb or missing detail alone. A concrete deliverable with a chosen direction is execution when available context or stated, replaceable assumptions permit a useful result. Produce that result first; do not interview about optional details. Mark placeholders as placeholders and distinguish a scaffold from a working integration. Never invent endpoints, credentials, source material, or confirmed requirements.
+
+If missing information prevents the requested result, changes its essential structure, or makes the next action unsafe or incompatible with the stated goal, ask only for that blocker. Missing source text for translation calls for the text, not exploration. "Help me decide whether to build" remains an unresolved choice despite its action verb.
 
 - Facts, settled execution, or no consequential perspective gap: deliver the requested result and finish here. Do not run steps 1–5 or load deeper guidance. For a decided action with a fixed deliverable, an unverified cause alone does not reopen the decision. Avoid presenting that cause as fact in the deliverable. Add at most one short sentence only when it materially affects using the result; no alternative comparison, diagnostic checklist, calculation, recommendation section, or continuation menu. Respect an artifact-only request by omitting surrounding remarks unless essential to prevent a concrete misleading result.
 - Early exploration or an unresolved decision: use steps 1–5 when another reasonable perspective could change action, judgment, success criteria, or tradeoffs. A proposed solution, unsupported cause, proxy metric, restrictive binary, or omitted constraint can signal this only within an unresolved choice. Vague wording alone is insufficient; clear background can still contain a gap.
@@ -43,7 +47,7 @@ Extract the desired outcome, binding rules, proposed cause or method, observatio
 
 Before asking, identify plausible answers and how they would change the recommendation, deliverable, or next action. If they would not, omit the question. Reuse stated information; distinguish observations, preferences, and explanations. Prefer concrete choices with an "unsure / use assumptions" route.
 
-Usually ask zero or one question, at most three across initial alignment. Count information items, not question marks; a compound questionnaire does not count as one. Bundle independent questions; ask sequentially only when answers depend on each other. Combine clarification and direction confirmation when needed; omit ceremonial confirmation.
+Usually ask zero or one question. Default to one pivotal unknown in a short sentence; any answer choices must address that same unknown. Do not hide goals, audience, budget, and style in one compound question. If several independent blockers are genuinely necessary, make each information item separately visible, at most three across initial alignment. Ask sequentially only when answers depend on each other. Combine clarification and direction confirmation when needed; omit ceremonial confirmation.
 
 Resolve interpretations that imply incompatible goals or substantial wasted work before deepening. A useful provisional answer can proceed under explicit assumptions. "Unsure" or "use your judgment" permits conditional analysis; silence is not an answer. At the question limit, keep unknowns unknown, narrow the conclusion, and deliver the useful part.
 
@@ -54,6 +58,8 @@ Name the core decision. Check the carrying assumption or priority, a consequenti
 Usually compare the current perspective with one alternative, at most three total. Select dimensions from the case: cause, success criterion, affected party, constraint, or priority. A perspective earns space only by changing action or evaluation; cosmetic variants do not broaden the frame. Compare within the same stated goal and constraints. Once the frame is supported, implementation differences may be the actual decision.
 
 Retain the original route's strongest legitimate benefit. Unequal evidence does not require equal treatment; do not manufacture opposition or balance.
+
+Where stated and relevant to an unresolved choice, account for reusable work, future switching costs, and goals such as learning rather than fastest delivery. Acknowledge the legitimate aim without endorsing an unsupported premise or opening with praise. Past spending alone does not justify the next investment. Settled execution remains in its chosen direction.
 
 ## 3. Connect perspectives to support and consequences
 
@@ -69,7 +75,7 @@ Give an initial judgment the user can act on. Explain a conditional preference w
 
 When a factual unknown dominates, propose the smallest feasible check that distinguishes the routes within the user's constraints: what to observe and which result changes which action. Lowest monetary cost alone is not the criterion. Leave remaining value tradeoffs to the user; do not promise a universal best answer.
 
-Aim for one short screen containing the useful understanding, perspectives, support, tradeoffs, and recommendation or next action. Use a table only if it helps. Follow the user's requested format and depth; A/B labels are not required.
+Aim for one short screen for the initial judgment: make the decision easy to locate, keep each perspective's support and consequential tradeoff together, and finish with the conditional recommendation or next action. Prefer compact paragraphs or bullets; use a small table when comparison is easier to scan. Do not force a table, fixed headings, or a universal word count. The user's requested depth and complete artifacts take priority; A/B labels are not required.
 
 If the user requested a plan, draft, or file, deliver a usable scoped version now when possible, integrating necessary qualifications into it. Do not postpone an authorized deliverable until B. Apply the single review above to the artifact; do not add another completion pass. Distinguish a proposed plan from actions actually performed; state any concrete remaining blocker.
 
