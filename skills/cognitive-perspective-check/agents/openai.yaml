@@ -1,6 +1,6 @@
 interface:
   display_name: "认知视角检查器"
-  short_description: "减少用户与 AI 的认知窄化，理解关键背景，对照视角与取舍，给出可用的条件判断"
-  default_prompt: "使用 $cognitive-perspective-check 帮我检查这个早期项目或决策中的双方预设，理解关键背景，比较会改变行动的视角，给出有依据的条件判断，再由我选择是否深入。"
+  short_description: "理解背景，检查用户与 AI 的预设；比较视角、依据和取舍，减少认知窄化。"
+  default_prompt: "使用 $cognitive-perspective-check 理解这个项目或决策的背景，检查双方预设，比较会改变行动的视角及依据，给出条件建议，再由我决定是否深入。"
 policy:
   allow_implicit_invocation: true

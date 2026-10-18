@@ -1,27 +1,27 @@
-# Manual review — cognitive-perspective-check
+# cognitive-perspective-check 人工审阅
 
-Historical review of the pre-v0.2 version. For the current candidate's executed installation checks and independent execution samples, see [validation.md](validation.md). The rule-coverage table below remains an author review, not measured behavioral results.
+本文审阅的是 v0.2 之前的版本。当前候选版的安装检查和独立执行样例见 [validation.md](validation.md)。下表由作者检查规则覆盖情况，不是实测行为结果。
 
-This is an author rule-coverage review, not an independent model benchmark or a measured run of six separate model responses. “Covered” means the written instructions explicitly address the expected behavior. Independent baseline/with-skill runs and trigger-rate measurements remain future validation work.
+“Covered”（覆盖）指书面规则明确要求了相应行为。这里没有独立模型基准测试，也没有分别采集六条模型回答。无 skill／有 skill 的独立对照和触发率仍待测量。
 
-## Observed baseline failure
+## 设计对话中出现的问题
 
-During the design conversation, repeated one-question-per-turn elicitation made the user feel the design was never ending. The skill now caps initial clarification at three questions, usually zero or one, and asks only for decision-changing information. This is an observed interaction failure, not a controlled experiment.
+设计对话中，每轮只问一个问题、反复追问，让用户觉得设计迟迟无法结束。因此，skill 将初始补问限制为最多三个问题，通常零个或一个，只问会改变决策的信息。这是实际交互中出现的问题，未经过对照实验。
 
-## Scenario review
+## 场景审阅
 
-| Scenario | Expected behavior | Rule coverage |
+| 场景 | 预期行为 | 规则覆盖 |
 |---|---|---|
-| Vague request to build an app for local-shop revenue | Separate outcome from proposed means; ask only which business bottleneck matters, or offer bounded comparison | Pass: the example asks one high-value question and does not jump to features. |
-| Simple unit conversion | Answer directly without frame analysis | Pass: explicit non-trigger rule covers it. |
-| Team misses deadlines; leadership proposes daily meetings despite meeting overload | Extract objective, constraint, and proposal; compare materially different paths; confirm direction if interpretations alter the work | Pass: workflow supports context extraction and direction alignment. |
-| Newsletter open rate fell “because subject lines are boring” | Treat cause as a hypothesis; still help with requested rewrite; mention other plausible causes only if consequential | Pass: goal/means distinction and direct-answer boundary allow both. |
-| Assistant initially assumes a paid course is right because people ask questions | Test assistant's own frame; distinguish interest from willingness to pay; suggest low-cost validation if it can change the recommendation | Pass: self-audit and factual-check rules cover this. |
-| User selects a pilot simulation after A | Continue only on chosen B path and state scope | Pass: A/B handoff explicitly prevents automatic expansion into every branch. |
+| 想做 App 提高本地商店收入，但需求模糊 | 区分目标和手段；只问哪个经营瓶颈最关键，或做有限比较 | 通过：示例只问一个关键问题，没有直接列功能。 |
+| 简单单位换算 | 直接回答，不分析框架 | 通过：明确列为不触发场景。 |
+| 团队交付延期；会议已过多，管理者仍想开每日例会 | 提炼目标、约束和提议，比较实质不同的路径；不同理解会改变工作时确认方向 | 通过：流程包含背景提炼和方向对齐。 |
+| 认为邮件简报打开率下降是“because subject lines are boring” | 将原因视为假设，同时完成改写；其他原因确实影响判断时再提 | 通过：目标／手段区分和直接交付规则允许兼顾两者。 |
+| AI 起初因有人提问就认定应该开付费课 | 检查 AI 自己的预设，区分兴趣和付费意愿；低成本验证会改变建议时提出验证 | 通过：自查和事实核验规则覆盖此情形。 |
+| 用户在 A 后选择试点推演 | 只沿用户选定的 B 路径继续，并说明范围 | 通过：A/B 衔接规则明确禁止自动展开全部分支。 |
 
-## Remaining limitations
+## 限制
 
-- The review was performed by the skill author and is vulnerable to self-confirmation.
-- No independent baseline run was performed, so improvement over an unassisted model is not measured.
-- Trigger reliability varies by host platform; the skill description cannot guarantee activation.
-- The initial question cap and output compactness should be checked with real users after publication.
+- 审阅由 skill 作者完成，可能存在自我确认偏差。
+- 未运行独立基线，无法衡量相对无 skill 模型的改善。
+- 触发可靠性因宿主平台而异，skill 描述不能保证激活。
+- 初始补问上限和输出是否简短，仍需在发布后由真实用户检验。
